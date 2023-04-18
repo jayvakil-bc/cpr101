@@ -1,0 +1,74 @@
+============================================
+- - - - - - - - -  Test-1  - - - - - - - - -
+============================================
+
+*** Start of Indexing strings Demo ***
+Type not empty string (q - to quit) :
+q
+*** End of Indexing strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-2  - - - - - - - - -
+============================================
+
+*** Start of Indexing strings Demo ***
+Type not empty string (q - to quit) :
+Hello
+Type the character position within the string :
+
+============================================
+- - - - - - - - -  Test-3  - - - - - - - - -
+============================================
+
+*** Start of Indexing strings Demo ***
+Type not empty string (q - to quit) :
+Hello
+Type the character position within the string :
+3
+The character found at 3 position is 'l'
+Type not empty string (q - to quit) :
+q
+*** End of Indexing strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-4  - - - - - - - - -
+============================================
+
+*** Start of Indexing strings Demo ***
+Type not empty string (q - to quit) :
+Hello User
+Type the character position within the string :
+
+============================================
+- - - - - - - - -  Test-5  - - - - - - - - -
+============================================
+
+*** Start of Indexing strings Demo ***
+Type not empty string (q - to quit) :
+Hello
+Type the character position within the string :
+8
+Too big... Position reduced to max. available
+The character found at 4 position is 'o'
+Type not empty string (q - to quit) :
+q
+*** End of Indexing strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-6  - - - - - - - - -
+============================================
+
+*** Start of Indexing strings Demo ***
+Type not empty string (q - to quit) :
+
+Type the character position within the string :
+0
+Too big... Position reduced to max. available
+The character found at -1 position is ''
+Type not empty string (q - to quit) :
+q
+*** End of Indexing strinas Demo ***
+
+
+
+

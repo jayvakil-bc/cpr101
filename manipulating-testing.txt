@@ -1,0 +1,240 @@
+============================================
+- - - - - - - - -  Test-1  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-2  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+Bar
+Concatenated string is 'FooBar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-3  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+Foo
+Concatenated string is 'FooFoo'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-4  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+B
+Concatenated string is 'FooB'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-5  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+B
+Type the 2nd string:
+Bar
+Concatenated string is 'BBar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-6  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+123
+Concatenated string is 'Foo123'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-7  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+123
+Type the 2nd string:
+Bar
+Concatenated string is '123Bar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-8  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+#
+Concatenated string is 'Foo#'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-9  - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+#
+Type the 2nd string:
+Bar
+Concatenated string is '#Bar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-10 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+
+Concatenated string is 'Foo'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+   
+============================================
+- - - - - - - - -  Test-11 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+
+Type the 2nd string:
+Bar
+Concatenated string is 'Bar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-12 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+FOO
+Type the 2nd string:
+Bar
+Concatenated string is 'FOOBar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-13 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+\n
+Concatenated string is 'Foo\n'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-14 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+\n
+Type the 2nd string:
+Bar
+Concatenated string is '\nBar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-15 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+BAR
+Concatenated string is 'FooBAR'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-16 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+
+Concatenated string is 'Foo '
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-17 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+
+Type the 2nd string:
+Bar
+Concatenated string is ' Bar'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+============================================
+- - - - - - - - -  Test-18 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+Type the 2nd string:
+zsh: trace trap  ./manipulating
+
+============================================
+- - - - - - - - -  Test-19 - - - - - - - - -
+============================================
+*** Start of Concatenating strings Demo ***
+Type the 1st string (q - to quit):
+Foo
+Type the 2nd string:
+q
+Concatenated string is 'Fooq'
+Type the 1st string (q - to quit):
+q
+*** End of Concatenatinag strinas Demo ***
+
+
+

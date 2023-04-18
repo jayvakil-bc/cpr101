@@ -1,0 +1,37 @@
+============================================
+- - - - - - - - -  Test-1  - - - - - - - - -
+============================================
+*** Start of Converting Strings to int Demo ***
+Type an int numeric string (g - to quit):
+123
+Converted number is 123
+============================================
+- - - - - - - - -  Test-2  - - - - - - - - -
+============================================
+Type an int numeric string (g - to quit):
+-456
+Converted number is -456
+============================================
+- - - - - - - - -  Test-3  - - - - - - - - -
+============================================
+Type an int numeric string (g - to quit):
+0
+Converted number is 0
+============================================
+- - - - - - - - -  Test-4  - - - - - - - - -
+============================================
+Type an int numeric string (g - to quit):
+abc
+Converted number is 0
+============================================
+- - - - - - - - -  Test-5  - - - - - - - - -
+============================================
+Type an int numeric string (g - to quit):
+1.5
+Converted number is 1
+============================================
+- - - - - - - - -  Test-6  - - - - - - - - -
+============================================
+Type an int numeric string (g - to quit):
+2147483648
+Converted number is -2147483648

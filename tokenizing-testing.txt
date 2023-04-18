@@ -1,0 +1,243 @@
+============================================
+- - - - - - - - -  Test-1  - - - - - - - - -
+============================================
+***Start of Tokenizing Words Demo ***
+Type a few words seperated by space (q - to quit):
+hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello 
+Word #1 is 'hello'
+Word #2 is 'hello'
+Word #3 is 'hello'
+Word #4 is 'hello'
+Word #5 is 'hello'
+Word #6 is 'hello'
+Word #7 is 'hello'
+Word #8 is 'hello'
+Word #9 is 'hello'
+Word #10 is 'hello'
+Word #11 is 'hello'
+Word #12 is 'hello'
+Word #13 is 'hello'
+Word #14 is 'hello'
+Word #15 is 'hello'
+Word #16 is 'hello'
+Word #17 is 'hello'
+Word #18 is 'hello'
+Word #19 is 'hello'
+Word #20 is 'hello'
+Word #21 is 'hello'
+Word #22 is 'hello'
+Word #23 is 'hello'
+Word #24 is 'hello'
+Word #25 is 'hello'
+Word #26 is 'hello'
+Word #27 is 'hello'
+Word #28 is 'hello'
+Word #29 is 'hello'
+Word #30 is 'hello'
+Word #31 is 'hello'
+Word #32 is 'hello'
+Word #33 is 'hello'
+Word #34 is 'hello'
+Word #35 is 'hello'
+Word #36 is 'hello'
+Word #37 is 'hello'
+Word #38 is 'hello'
+Word #39 is 'hello'
+Word #40 is 'hello'
+Word #41 is 'hello'
+Word #42 is 'hello'
+Word #43 is 'hello'
+Word #44 is 'hello'
+Word #45 is 'hello'
+Word #46 is 'hello'
+Word #47 is 'hello'
+Word #48 is 'hello'
+Word #49 is 'hello'
+Word #50 is 'hell'
+Type a few words seperated by space (q - to quit):
+Word #1 is 'hello'
+Word #2 is 'hello'
+Word #3 is 'hello'
+Word #4 is 'hello'
+Word #5 is 'hello'
+Word #6 is 'hello'
+Word #7 is 'hello'
+Word #8 is 'hello'
+Word #9 is 'hello'
+Word #10 is 'hello'
+Word #11 is 'hello'
+Word #12 is 'hello'
+Word #13 is 'hello'
+Word #14 is 'hello'
+Word #15 is 'hello'
+Word #16 is 'hello'
+Word #17 is 'hello'
+Word #18 is 'hello'
+Word #19 is 'hello'
+Word #20 is 'hello'
+Word #21 is 'hello'
+Word #22 is 'hello'
+Word #23 is 'hello'
+Word #24 is 'hello'
+Word #25 is 'hello'
+Word #26 is 'hello'
+Word #27 is 'hello'
+Word #28 is 'hello'
+Word #29 is 'hello'
+Word #30 is 'hello'
+Word #31 is 'hello'
+Word #32 is 'hello'
+Word #33 is 'hello'
+Word #34 is 'hello'
+Word #35 is 'hello'
+Word #36 is 'hello'
+Word #37 is 'hello'
+Word #38 is 'hello'
+Word #39 is 'hello'
+Word #40 is 'hello'
+Word #41 is 'hello'
+Word #42 is 'hello'
+Word #43 is 'hello'
+Word #44 is 'hello'
+Word #45 is 'hello'
+Word #46 is 'hello'
+Word #47 is 'hello'
+Word #48 is 'hello'
+Word #49 is 'hello'
+Word #50 is 'hel'
+Type a few words seperated by space (q - to quit):
+Word #1 is 'o'
+Word #2 is 'hello'
+Word #3 is 'hello'
+Word #4 is 'hello'
+Word #5 is 'hello'
+Word #6 is 'hello'
+Word #7 is 'hello'
+Word #8 is 'hello'
+Word #9 is 'hello'
+Word #10 is 'hello'
+Word #11 is 'hello'
+Word #12 is 'hello'
+Word #13 is 'hello'
+Word #14 is 'hello'
+Word #15 is 'hello'
+Word #16 is 'hello'
+Word #17 is 'hello'
+Word #18 is 'hello'
+Word #19 is 'hello'
+Word #20 is 'hello'
+Word #21 is 'hello'
+Word #22 is 'hello'
+Word #23 is 'hello'
+Word #24 is 'hello'
+Word #25 is 'hello'
+Word #26 is 'hello'
+Word #27 is 'hello'
+Word #28 is 'hello'
+Word #29 is 'hello'
+Word #30 is 'hello'
+Word #31 is 'hello'
+Word #32 is 'hello'
+Word #33 is 'hello'
+Word #34 is 'hello'
+Word #35 is 'hello'
+Word #36 is 'hello'
+Word #37 is 'hello'
+Word #38 is 'hello'
+Word #39 is 'hello'
+Word #40 is 'hello'
+Word #41 is 'hello'
+Word #42 is 'hello'
+Word #43 is 'hello'
+Word #44 is 'hello'
+Word #45 is 'hello'
+Word #46 is 'hello'
+Word #47 is 'hello'
+Word #48 is 'hello'
+Word #49 is 'hello'
+Word #50 is 'hello'
+Word #51 is 'he'
+Type a few words seperated by space (q - to quit):
+Word #1 is 'lo'
+Word #2 is 'hello'
+Word #3 is 'hello'
+Word #4 is 'hello'
+Word #5 is 'hello'
+Word #6 is 'hello'
+Word #7 is 'hello'
+Word #8 is 'hello'
+Word #9 is 'hello'
+Word #10 is 'hello'
+Word #11 is 'hello'
+Word #12 is 'hello'
+Word #13 is 'hello'
+Word #14 is 'hello'
+Word #15 is 'hello'
+Word #16 is 'hello'
+Word #17 is 'hello'
+Word #18 is 'hello'
+Word #19 is 'hello'
+Word #20 is 'hello'
+Word #21 is 'hello'
+Word #22 is 'hello'
+Word #23 is 'hello'
+Word #24 is 'hello'
+Word #25 is 'hello'
+Word #26 is 'hello'
+Word #27 is 'hello'
+Word #28 is 'hello'
+Word #29 is 'hello'
+Word #30 is 'hello'
+Word #31 is 'hello'
+Word #32 is 'hello'
+Word #33 is 'hello'
+Word #34 is 'hello'
+Word #35 is 'hello'
+Word #36 is 'hello'
+Word #37 is 'hello'
+Type a few words seperated by space (q - to quit):
+
+
+============================================
+- - - - - - - - -  Test-2  - - - - - - - - -
+============================================
+
+Type a few words seperated by space (q - to quit):
+q
+*** End of Tokenizing Words Demo ***
+
+
+============================================
+- - - - - - - - -  Test-3  - - - - - - - - -
+============================================
+***Start of Tokenizing Words Demo ***
+Type a few words seperated by space (q - to quit):
+
+Type a few words seperated by space (q - to quit):
+
+============================================
+- - - - - - - - -  Test-4  - - - - - - - - -
+============================================
+Type a few words seperated by space (q - to quit):
+hello
+Word #1 is 'hello'
+Type a few words seperated by space (q - to quit):
+
+============================================
+- - - - - - - - -  Test-5  - - - - - - - - -
+============================================
+Type a few words seperated by space (q - to quit):
+hello world
+Word #1 is 'hello'
+Word #2 is 'world'
+Type a few words seperated by space (q - to quit):
+
+============================================
+- - - - - - - - -  Test-6  - - - - - - - - -
+============================================
+
+***Start of Tokenizing Words Demo ***
+Type a few words seperated by space (q - to quit):
+        hello
+Word #1 is '    hello'
+Type a few words seperated by space (q - to quit):
