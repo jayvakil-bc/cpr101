@@ -1,6 +1,3 @@
-
-VERSION-1 TEST CASES
-
 ============================================
 - - - - - - - - -  Test-1  - - - - - - - - -
 ============================================
@@ -71,76 +68,6 @@ The character found at -1 position is ''
 Type not empty string (q - to quit) :
 q
 *** End of Indexing strinas Demo ***
-
-
-VERSION-2 TEST CASES
-
-
-============================================
-- - - - - - - - -  Test-1  - - - - - - - - -
-============================================
-
-*** Start of Measuring Strings Demo ***
-Type a string (q - to quit):
-q
-*** End of Measuring Strings Demo ***
-
-
-============================================
-- - - - - - - - -  Test-2  - - - - - - - - -
-============================================
-
-*** Start of Measuring Strings Demo ***
-Type a string (q - to quit):
-
-The length of '' is 0 characters
-
-
-============================================
-- - - - - - - - -  Test-3  - - - - - - - - -
-============================================
-
-*** Start of Measuring Strings Demo ***
-Type a string (q - to quit):
-s
-The length of 's' is 1 character
-
-
-============================================
-- - - - - - - - -  Test-4  - - - - - - - - -
-============================================
-
-*** Start of Measuring Strings Demo ***
-Type a string (q - to quit):
-Hello User
-The length of 'Hello User' is 10 characters
-
-
-============================================
-- - - - - - - - -  Test-5  - - - - - - - - -
-============================================
-
-*** Start of Measuring Strings Demo ***
-Type a string (q - to quit):
-This test is to check if the program runs successfully
-The length of 'This test is to check if the program runs successfully' is 54 characters
-
-
-============================================
-- - - - - - - - -  Test-6  - - - - - - - - -
-============================================
-
- *** Start of Measuring Strings Demo ***
-Type a string (q - to quit):
-Hello
-The length of 'Hello' is 5 characters
-Type a string (q - to quit):
-q
-*** End of Measuring Strings Demo ***
-
-
-
-
 
 
 
