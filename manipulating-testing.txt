@@ -236,5 +236,251 @@ Type the 1st string (q - to quit):
 q
 *** End of Concatenatinag strinas Demo ***
 
+============================================
+- - - - - - - - -  Test-1  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
 
+============================================
+- - - - - - - - -  Test-2  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+Bar
+'Foo' string is greater than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
 
+============================================
+- - - - - - - - -  Test-3  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+Foo
+'Foo' string is equal to 'Foo'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-4  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+B
+'Foo' string is greater than 'B'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-5  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+B
+Type the 2nd string to compare:
+Bar
+'B' string is less than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-6  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+123
+'Foo' string is greater than '123'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-7  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+123
+Type the 2nd string to compare:
+Bar
+'123' string is less than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-8  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+#
+'Foo' string is greater than '#'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-9  - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+#
+Type the 2nd string to compare:
+Bar
+'#' string is less than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-10 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+
+'Foo' string is greater than ''
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-11 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+
+Type the 2nd string to compare:
+Bar
+'' string is less than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-12 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+\n
+'Foo' string is less than '\n'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-13 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+\n
+Type the 2nd string to compare:
+Bar
+'\n' string is greater than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-14 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+FOO
+Type the 2nd string to compare:
+Bar
+'FOO' string is greater than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-15 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+BAR
+'Foo' string is greater than 'BAR'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-16 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+
+'Foo' string is greater than ' '
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-17 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+
+Type the 2nd string to compare:
+Bar
+' ' string is less than 'Bar'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***
+
+============================================
+- - - - - - - - -  Test-18 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+Type the 2nd string to compare:
+'Fooooooo' string is less than 'oooooooo'
+Type the 1st string to compare (q - to quit):
+Type the 2nd string to compare:
+'oooooooo' string is equal to 'oooooooo'
+Type the 1st string to compare (q - to quit):
+Type the 2nd string to compare:
+'oooooooo' string is equal to 'oooooooo'
+Type the 1st string to compare (q - to quit):
+Type the 2nd string to compare:
+'oooooooo' string is equal to 'oooooooo'
+Type the 1st string to compare (q - to quit):
+Type the 2nd string to compare:
+
+============================================
+- - - - - - - - -  Test-19 - - - - - - - - -
+============================================
+*** Start of Comparing Strings Demo ***
+Type the 1st string to compare (q - to quit):
+Foo
+Type the 2nd string to compare:
+q
+'Foo' string is less than 'q'
+Type the 1st string to compare (q - to quit):
+q
+*** End of Comparing Strings Demo ***

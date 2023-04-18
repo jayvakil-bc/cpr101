@@ -1,0 +1,289 @@
+Version 2 
+
+============================================
+- - - - - - - - -  Test-1  - - - - - - - - -
+============================================
+
+*** Start of Tokenizing Phrases Demo ***
+Type a few phrases separated by comma(q - to quit):
+hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,
+Phrase #1 is 'hellofromversion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromv'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'rsion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Phrase #18 is 'hel'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'ofromversion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversi'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'n2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Phrase #18 is 'hellofr'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'mversion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'ellofromversion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromve'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'sion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Phrase #18 is 'hell'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'fromversion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversio'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is '2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Phrase #18 is 'hellofro'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'version2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Phrase #18 is 'h'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'llofromversion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromver'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'ion2'
+Phrase #2 is 'hellofromversion2'
+Phrase #3 is 'hellofromversion2'
+Phrase #4 is 'hellofromversion2'
+Phrase #5 is 'hellofromversion2'
+Phrase #6 is 'hellofromversion2'
+Phrase #7 is 'hellofromversion2'
+Phrase #8 is 'hellofromversion2'
+Phrase #9 is 'hellofromversion2'
+Phrase #10 is 'hellofromversion2'
+Phrase #11 is 'hellofromversion2'
+Phrase #12 is 'hellofromversion2'
+Phrase #13 is 'hellofromversion2'
+Phrase #14 is 'hellofromversion2'
+Phrase #15 is 'hellofromversion2'
+Phrase #16 is 'hellofromversion2'
+Phrase #17 is 'hellofromversion2'
+Phrase #18 is 'hello'
+Type a few phrases separated by comma(q - to quit):
+Phrase #1 is 'romversion2'
+
+
+============================================
+- - - - - - - - -  Test-2  - - - - - - - - -
+============================================
+
+Type a few phrases separated by comma(q - to quit):
+q
+*** End of Tokenizing Phrases Demo ***
+
+
+
+...Program finished with exit code 0
+
+
+============================================
+- - - - - - - - -  Test-3  - - - - - - - - -
+============================================
+
+*** Start of Tokenizing Phrases Demo ***
+Type a few phrases separated by comma(q - to quit):
+
+Type a few phrases separated by comma(q - to quit):
+
+
+============================================
+- - - - - - - - -  Test-4  - - - - - - - - -
+============================================
+
+Type a few phrases separated by comma(q - to quit):
+hellofromversion2
+Phrase #1 is 'hellofromversion2'
+
+============================================
+- - - - - - - - -  Test-5  - - - - - - - - -
+============================================
+
+Type a few phrases separated by comma(q - to quit):
+hello,from,version two
+Phrase #1 is 'hello'
+Phrase #2 is 'from'
+Phrase #3 is 'version two'
+
+============================================
+- - - - - - - - -  Test-6  - - - - - - - - -
+============================================
+
+*** Start of Tokenizing Phrases Demo ***
+Type a few phrases separated by comma(q - to quit):
+does,,this,,still,,work?
+Phrase #1 is 'does'
+Phrase #2 is 'this'
+Phrase #3 is 'still'
+Phrase #4 is 'work?'
+
+
+
