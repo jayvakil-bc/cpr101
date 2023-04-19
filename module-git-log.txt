@@ -1,0 +1,4413 @@
+commit 0a599061f5428bc8a24c1a61d58448432f4a56a7
+Author: Jay Vakil <jayvakil2@gmail.com>
+Date:   Tue Apr 18 20:49:28 2023 -0400
+
+    VERSION1
+
+diff --git a/.DS_Store b/.DS_Store
+index 9c9ffdb..ca5b893 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/Final-Project-Test-Cases.xlsx b/Final-Project-Test-Cases.xlsx
+index 1bf2953..528f5a5 100644
+Binary files a/Final-Project-Test-Cases.xlsx and b/Final-Project-Test-Cases.xlsx differ
+diff --git a/conversion-testing.txt b/conversion-testing.txt
+index a421b64..0013015 100644
+--- a/conversion-testing.txt
++++ b/conversion-testing.txt
+@@ -35,3 +35,40 @@ Converted number is 1
+ Type an int numeric string (g - to quit):
+ 2147483648
+ Converted number is -2147483648
++============================================
++- - - - - - - - -  Test-7  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++12.34
++Converted number is 12.340000
++============================================
++- - - - - - - - -  Test-8  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++12.3a4
++Converted number is 12.300000
++============================================
++- - - - - - - - -  Test-9  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++q
++*** End of Converting Strings to double Demo ***
++============================================
++- - - - - - - - -  Test-10  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++1.7976931348623157E+308
++Converted number is 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000
++============================================
++- - - - - - - - -  Test-11  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++2.225074e-308
++Converted number is 0.000000
++============================================
++- - - - - - - - -  Test-12  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++2.23E-308
++Converted number is 0.000000
++
+diff --git a/converting.c b/converting.c
+index cad7ce4..ed36d5c 100644
+--- a/converting.c
++++ b/converting.c
+@@ -5,17 +5,16 @@
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 80  // define a constant value for the maximum size of a string buffer
+ 
+-void converting(void)  // define the main function for this module
++void converting(void) 
+ {
+     // v1 - Demonstrate conversion of strings to integers using atoi()
+-
+     printf("*** Start of Converting Strings to int Demo ***\n");
+ 
+     char intString[BUFFER_SIZE];  // define a character array to hold the string input from the user
+     int intNumber;  // define an integer variable to hold the converted numeric value
+ 
+     do {
+-        printf("Type an int numeric string (g - to quit):\n");
++        printf("Type an int numeric string (q - to quit):\n");
+          // read a string from standard input and store it in the buffer
+         fgets(intString, BUFFER_SIZE, stdin); 
+         intString[strlen(intString) - 1] = '\0';  // remove the newline character at the end of the string
+@@ -30,7 +29,33 @@ void converting(void)  // define the main function for this module
+     printf("*** End of Converting Strings to int Demo ***\n\n");
+ 
+     /* Version 2 */
+-    // (No code is provided for Version 2)
++    // prints a message indicating the start of the program.
++    printf("*** Start of Converting Strings to double Demo ***\n");
++
++    // The following line defines the size of the buffer.
++    char doubleString[BUFFER_SIZE];
++    double doubleNumber;//variable
++
++    //The following code will loop until the user types "q".
++    do
++    {
++        // The following line prompts the user to type a double numeric string.
++        printf("Type the double numeric string (q - to quit): \n");
++
++        // The following line reads a string from the user and stores it in doubleString.
++        fgets(doubleString, BUFFER_SIZE, stdin);
++
++        // The following line replaces the last character in doubleString with '\0'.
++        doubleString[strlen(doubleString) - 1] = '\0';
++
++        // The following lines check whether the user typed "q".
++        // If not, the string is converted to a double value using the atof function and printed.
++        if (strcmp(doubleString, "q") != 0) {
++            doubleNumber = atof(doubleString);
++            printf("Converted number is %f\n", doubleNumber);
++        }
++    } while (strcmp(doubleString, "q") != 0);// The following line checks whether the user typed "g".
++    printf("*** End of Converting Strings to double Demo ***\n\n");
+ 
+     /* Version 3 */
+     // (No code is provided for Version 3)
+diff --git a/fundamentals - testing.txt b/fundamentals - testing.txt
+index 6af0292..c6e7287 100644
+--- a/fundamentals - testing.txt	
++++ b/fundamentals - testing.txt	
+@@ -1,3 +1,6 @@
++
++VERSION-1 TEST CASES
++
+ ============================================
+ - - - - - - - - -  Test-1  - - - - - - - - -
+ ============================================
+@@ -70,5 +73,75 @@ q
+ *** End of Indexing strinas Demo ***
+ 
+ 
++VERSION-2 TEST CASES
++
++
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++q
++*** End of Measuring Strings Demo ***
++
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++
++The length of '' is 0 characters
++
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++s
++The length of 's' is 1 character
++
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++Hello User
++The length of 'Hello User' is 10 characters
++
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++This test is to check if the program runs successfully
++The length of 'This test is to check if the program runs successfully' is 54 characters
++
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++
++ *** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++Hello
++The length of 'Hello' is 5 characters
++Type a string (q - to quit):
++q
++*** End of Measuring Strings Demo ***
++
++
++
++
++
++
+ 
+ 
+diff --git a/fundamentals.c b/fundamentals.c
+index d198923..6b5722a 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -6,9 +6,7 @@
+ // Include the header file
+ #include "fundamentals.h"
+ 
+-
+-void fundamentals(void)
+-{
++void fundamentals(void) {
+ 	/* Version 1 */
+ 	
+ 	// Display a message to indicate the start of the demo
+@@ -27,8 +25,7 @@ void fundamentals(void)
+ 		// Remove the newline character at the end of the string
+ 		buffer1[strlen(buffer1) - 1] = '\0';
+ 		// Check if the user entered "q" to quit
+-		if (strcmp(buffer1, "q") != 0)
+-		{
++		if (strcmp(buffer1, "q") != 0) {
+ 			// Prompt the user to input a position within the string
+ 			printf("Type the character position within the string: \n");
+ 			fgets(numInput, NUM_INPUT_SIZE, stdin);
+@@ -38,25 +35,49 @@ void fundamentals(void)
+ 			position = atoi(numInput);
+ 
+ 			// Check if the position input is valid
+-			if (position >= strlen(buffer1)) 
+-			{
++			if (position >= strlen(buffer1)) {
+ 				position = strlen(buffer1) - 1;
+ 				printf("Too big... Position reduced to max. availbale\n");
+ 			}
+ 			// Print the character found at the specified position within the string
+ 			printf("The character found at %d position is \'%c\'\n",
+-			(int)position, buffer1[position]);
+-		}	
+-	}while (strcmp(buffer1, "q") != 0);
++				(int)position, buffer1[position]);
++			}	
++		}while (strcmp(buffer1, "q") != 0);
+ 	// Display a message to indicate the end of the demo
+ 	printf("*** End of Indexing Strings Demo ***\n\n");
+-}
+ 
+-/* Version 2 */
+ 
++	/* Version 2 */
++
++	// Display a message to indicate the start of the demo
++	printf("*** Start of Measuring Strings Demo ***\n");
+ 
++	// Declare Variables
++	char buffer2[BUFFER_SIZE];
++
++	// Using a do-while loop to prompt the user to input a string and a position until they enter "q" to quit
++	do{
++		// Prompt user to input a string
++		printf("Type a string (q - to quit):\n");
++		// Read the string entered by user and stores it in the "buffer2" array
++		fgets(buffer2, BUFFER_SIZE, stdin);	
++		// Removes the newline character at the end of the string
++		buffer2[strlen(buffer2) - 1] = '\0';
+ 
+-/* Version 3 */
++		// Check if the user entered "q" to quit
++		if (strcmp(buffer2, "q") != 0)
++			// Display a message indicating the length of the string
++			printf("The length of \'%s\' is %d characters\n",
++				buffer2, (int)strlen(buffer2));		
++	} while (strcmp(buffer2, "q") != 0);
++
++	// Display a message to indicate the start of the demo
++	printf("*** End of Measuring Strings Demo ***\n\n");
++
++
++	/* Version 3 */
++}
+ 
+ 
+ 
+diff --git a/main.c b/main.c
+index 0ef52a1..3a298d1 100644
+--- a/main.c
++++ b/main.c
+@@ -1,8 +1,8 @@
+ #define _CRT_SECURE_NO_WARNINGS
+-//#include "fundamentals.h"
+-//#include "manipulating.h"
++#include "fundamentals.h"
++#include "manipulating.h"
+ #include "converting.h"
+-//#include "tokenizing.h"
++#include "tokenizing.h"
+ 
+ // This program allows the user to choose which module to run.
+ int main (void)
+@@ -22,13 +22,13 @@ int main (void)
+         // The program then executes the selected module.
+         switch (buff[0])
+         {
+-        //case '1': fundamentals () ;
++        case '1': fundamentals () ;
+             //break;
+-        //case '2': manipulating () ;
++        case '2': manipulating () ;
+             //break;
+         case '3': converting ();
+             break;
+-        //case '4': tokenizing () ;
++        case '4': tokenizing () ;
+             //break;
+         }
+     } while (buff[0] != '0'); // The program continues to prompt the user for module selection until they choose to exit.
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+index 663a1d4..ca90b4f 100644
+--- a/manipulating-testing.txt
++++ b/manipulating-testing.txt
+@@ -236,5 +236,251 @@ Type the 1st string (q - to quit):
+ q
+ *** End of Concatenatinag strinas Demo ***
+ 
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++Bar
++'Foo' string is greater than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++Foo
++'Foo' string is equal to 'Foo'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++B
++'Foo' string is greater than 'B'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++B
++Type the 2nd string to compare:
++Bar
++'B' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++123
++'Foo' string is greater than '123'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-7  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++123
++Type the 2nd string to compare:
++Bar
++'123' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-8  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++#
++'Foo' string is greater than '#'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-9  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++#
++Type the 2nd string to compare:
++Bar
++'#' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-10 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++
++'Foo' string is greater than ''
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-11 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++
++Type the 2nd string to compare:
++Bar
++'' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-12 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++\n
++'Foo' string is less than '\n'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-13 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++\n
++Type the 2nd string to compare:
++Bar
++'\n' string is greater than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
+ 
++============================================
++- - - - - - - - -  Test-14 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++FOO
++Type the 2nd string to compare:
++Bar
++'FOO' string is greater than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
+ 
++============================================
++- - - - - - - - -  Test-15 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++BAR
++'Foo' string is greater than 'BAR'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-16 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++
++'Foo' string is greater than ' '
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-17 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++
++Type the 2nd string to compare:
++Bar
++' ' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-18 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
++Type the 2nd string to compare:
++'Fooooooo' string is less than 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++'oooooooo' string is equal to 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++'oooooooo' string is equal to 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++'oooooooo' string is equal to 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++
++============================================
++- - - - - - - - -  Test-19 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++q
++'Foo' string is less than 'q'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
+diff --git a/manipulating.c b/manipulating.c
+index f827db9..473a5cd 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -4,31 +4,66 @@
+ 
+ /**
+  * Concatenates two strings taken from the standard input
++ * Compares two strings taken from the standard input
+  */
+-void manipulating(void) 
+-{
+-    printf("*** Start of Concatenating strings Demo ***\n");
++void manipulating(void) {
++  printf("*** Start of Concatenating strings Demo ***\n");
+ 
+-    char string1[BUFFER_SIZE];
+-    char string2[BUFFER_SIZE];
++  char string1[BUFFER_SIZE];
++  char string2[BUFFER_SIZE];
+ 
+-    do {
+-        printf("Type the 1st string (q - to quit): \n");
+-        fgets(string1, BUFFER_SIZE, stdin); // Store characters from stdin in string1
++  do {
++    printf("Type the 1st string (q - to quit): \n");
++    fgets(string1, BUFFER_SIZE,
++          stdin); // Store characters from stdin in string1
+ 
+-        string1[strlen(string1) - 1] = '\0'; // Append the null character
++    string1[strlen(string1) - 1] = '\0'; // Append the null character
+ 
+-        if((strcmp(string1, "q") != 0)) 
+-        {
+-            printf("Type the 2nd string: \n");
+-            fgets(string2, BUFFER_SIZE, stdin); // Store characters from stdin in string2
++    if ((strcmp(string1, "q") != 0)) {
++      printf("Type the 2nd string: \n");
++      fgets(string2, BUFFER_SIZE,
++            stdin); // Store characters from stdin in string2
+ 
+-            string2[strlen(string2) - 1] = '\0'; // Append the null character
++      string2[strlen(string2) - 1] = '\0'; // Append the null character
+ 
+-            strcat(string1, string2); // Join string1, string2 and store in string1
+-            printf("Concatenated string is \'%s\'\n", string1);
+-        }
+-    } while (strcmp(string1, "q") != 0); 
++      strcat(string1, string2); // Join string1, string2 and store in string1
++      printf("Concatenated string is \'%s\'\n", string1);
++    }
++  } while (strcmp(string1, "q") != 0);
+ 
+-    printf("*** End of Concatenatinag strinas Demo ***\n\n");
++  printf("*** End of Concatenatinag strinas Demo ***\n\n");
++
++  printf("*** Start of Comparing Strings Demo ***\n");
++
++  char compare1[BUFFER_SIZE];
++  char compare2[BUFFER_SIZE];
++  int result;
++
++  do {
++    printf("Type the 1st string to compare (q - to quit):\n");
++    fgets(compare1, BUFFER_SIZE,
++          stdin); // Store characters from the stdin in compare1
++
++    compare1[strlen(compare1) - 1] = '\0'; // Append the null character
++
++    if (strcmp(compare1, "q") != 0) {
++      printf("Type the 2nd string to compare:\n");
++      fgets(compare2, BUFFER_SIZE,
++            stdin); // Store the characters from stdin in compare2
++
++      compare2[strlen(compare2) - 1] = '\0'; // Append the null character
++
++      result = strcmp(compare1, compare2); // Store the strcmp return value
++
++      if (result < 0) {
++        printf("\'%s\' string is less than \'%s\'\n", compare1, compare2);
++      } else if (result == 0) {
++        printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2);
++      } else {
++        printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2);
++      }
++    }
++  } while (strcmp(compare1, "q") != 0);
++
++  printf("*** End of Comparing Strings Demo ***\n\n");
+ }
+diff --git a/tokenizing.c b/tokenizing.c
+index 186bbaf..b233a19 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -4,6 +4,7 @@
+ 
+ void tokenizing()
+ {
++
+ 	/* Version 1 */
+ 	printf("***Start of Tokenizing Words Demo ***\n");
+ 	char words[BUFFER_SIZE];
+@@ -16,7 +17,7 @@ void tokenizing()
+ 		fgets(words, BUFFER_SIZE, stdin);
+ 		words[strlen(words) - 1] = '\0';
+ 		if (strcmp(words, "q") != 0)
+-		{	
++		{
+ 			nextWord = strtok(words, " ");
+ 			wordsCounter = 1;
+ 			while (nextWord)
+@@ -28,19 +29,25 @@ void tokenizing()
+ 	} while (strcmp(words, "q") != 0);
+ 	printf("*** End of Tokenizing Words Demo ***\n\n");
+ 
+-
+ 	/* Version 2 */
+-	//>> insert here
+-
+-
+-	/* Version 3 */
+-	//>> insert here
+-
+-
++	printf("*** Start of Tokenizing Phrases Demo ***\n");
++	char phrases[BUFFER_SIZE];
++	char* nextPhrase = NULL;
++	int phrasesCounter;
++	do {
++		printf("Type a few phrases separated by comma(q - to quit):\n");
++		fgets(phrases, BUFFER_SIZE, stdin);
++		phrases[strlen(phrases) - 1] = '\0';
++		if ((strcmp(phrases, "q") != 0)) {
++			nextPhrase = strtok(phrases, ",");
++			phrasesCounter = 1;
++			while (nextPhrase) {
++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
++				nextPhrase = strtok(NULL, ",");
++			}
++		}
++	} while (strcmp(phrases, "q") != 0);
++	printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+ 
+ 
+-int main()
+-{
+-	tokenizing();
+-}
+\ No newline at end of file
+
+commit 068cbadaffa8113f43662b6fd0e9b1de2cb487db
+Author: Jay Vakil <jayvakil2@gmail.com>
+Date:   Tue Apr 18 20:46:33 2023 -0400
+
+    VERSION1
+
+diff --git a/Final-Project-Test-Cases.xlsx b/Final-Project-Test-Cases.xlsx
+index e24b9f5..1bf2953 100644
+Binary files a/Final-Project-Test-Cases.xlsx and b/Final-Project-Test-Cases.xlsx differ
+
+commit 4c2a7cfd104818e7443e2278da375b1461bb5649
+Author: Jay Vakil <jayvakil2@gmail.com>
+Date:   Tue Apr 18 16:13:59 2023 -0400
+
+    VERSION3
+
+diff --git a/.DS_Store b/.DS_Store
+index ca5b893..9c9ffdb 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/Final-Project-Test-Cases.xlsx b/Final-Project-Test-Cases.xlsx
+index 30c015b..e24b9f5 100644
+Binary files a/Final-Project-Test-Cases.xlsx and b/Final-Project-Test-Cases.xlsx differ
+diff --git a/conversion-testing.txt b/conversion-testing.txt
+index 0013015..a421b64 100644
+--- a/conversion-testing.txt
++++ b/conversion-testing.txt
+@@ -35,40 +35,3 @@ Converted number is 1
+ Type an int numeric string (g - to quit):
+ 2147483648
+ Converted number is -2147483648
+-============================================
+-- - - - - - - - -  Test-7  - - - - - - - - -
+-============================================
+-Type the double numeric string (q - to quit): 
+-12.34
+-Converted number is 12.340000
+-============================================
+-- - - - - - - - -  Test-8  - - - - - - - - -
+-============================================
+-Type the double numeric string (q - to quit): 
+-12.3a4
+-Converted number is 12.300000
+-============================================
+-- - - - - - - - -  Test-9  - - - - - - - - -
+-============================================
+-Type the double numeric string (q - to quit): 
+-q
+-*** End of Converting Strings to double Demo ***
+-============================================
+-- - - - - - - - -  Test-10  - - - - - - - - -
+-============================================
+-Type the double numeric string (q - to quit): 
+-1.7976931348623157E+308
+-Converted number is 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000
+-============================================
+-- - - - - - - - -  Test-11  - - - - - - - - -
+-============================================
+-Type the double numeric string (q - to quit): 
+-2.225074e-308
+-Converted number is 0.000000
+-============================================
+-- - - - - - - - -  Test-12  - - - - - - - - -
+-============================================
+-Type the double numeric string (q - to quit): 
+-2.23E-308
+-Converted number is 0.000000
+-
+diff --git a/converting.c b/converting.c
+index ed36d5c..cad7ce4 100644
+--- a/converting.c
++++ b/converting.c
+@@ -5,16 +5,17 @@
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 80  // define a constant value for the maximum size of a string buffer
+ 
+-void converting(void) 
++void converting(void)  // define the main function for this module
+ {
+     // v1 - Demonstrate conversion of strings to integers using atoi()
++
+     printf("*** Start of Converting Strings to int Demo ***\n");
+ 
+     char intString[BUFFER_SIZE];  // define a character array to hold the string input from the user
+     int intNumber;  // define an integer variable to hold the converted numeric value
+ 
+     do {
+-        printf("Type an int numeric string (q - to quit):\n");
++        printf("Type an int numeric string (g - to quit):\n");
+          // read a string from standard input and store it in the buffer
+         fgets(intString, BUFFER_SIZE, stdin); 
+         intString[strlen(intString) - 1] = '\0';  // remove the newline character at the end of the string
+@@ -29,33 +30,7 @@ void converting(void)
+     printf("*** End of Converting Strings to int Demo ***\n\n");
+ 
+     /* Version 2 */
+-    // prints a message indicating the start of the program.
+-    printf("*** Start of Converting Strings to double Demo ***\n");
+-
+-    // The following line defines the size of the buffer.
+-    char doubleString[BUFFER_SIZE];
+-    double doubleNumber;//variable
+-
+-    //The following code will loop until the user types "q".
+-    do
+-    {
+-        // The following line prompts the user to type a double numeric string.
+-        printf("Type the double numeric string (q - to quit): \n");
+-
+-        // The following line reads a string from the user and stores it in doubleString.
+-        fgets(doubleString, BUFFER_SIZE, stdin);
+-
+-        // The following line replaces the last character in doubleString with '\0'.
+-        doubleString[strlen(doubleString) - 1] = '\0';
+-
+-        // The following lines check whether the user typed "q".
+-        // If not, the string is converted to a double value using the atof function and printed.
+-        if (strcmp(doubleString, "q") != 0) {
+-            doubleNumber = atof(doubleString);
+-            printf("Converted number is %f\n", doubleNumber);
+-        }
+-    } while (strcmp(doubleString, "q") != 0);// The following line checks whether the user typed "g".
+-    printf("*** End of Converting Strings to double Demo ***\n\n");
++    // (No code is provided for Version 2)
+ 
+     /* Version 3 */
+     // (No code is provided for Version 3)
+diff --git a/fundamentals - testing.txt b/fundamentals - testing.txt
+index c6e7287..6af0292 100644
+--- a/fundamentals - testing.txt	
++++ b/fundamentals - testing.txt	
+@@ -1,6 +1,3 @@
+-
+-VERSION-1 TEST CASES
+-
+ ============================================
+ - - - - - - - - -  Test-1  - - - - - - - - -
+ ============================================
+@@ -73,75 +70,5 @@ q
+ *** End of Indexing strinas Demo ***
+ 
+ 
+-VERSION-2 TEST CASES
+-
+-
+-============================================
+-- - - - - - - - -  Test-1  - - - - - - - - -
+-============================================
+-
+-*** Start of Measuring Strings Demo ***
+-Type a string (q - to quit):
+-q
+-*** End of Measuring Strings Demo ***
+-
+-
+-============================================
+-- - - - - - - - -  Test-2  - - - - - - - - -
+-============================================
+-
+-*** Start of Measuring Strings Demo ***
+-Type a string (q - to quit):
+-
+-The length of '' is 0 characters
+-
+-
+-============================================
+-- - - - - - - - -  Test-3  - - - - - - - - -
+-============================================
+-
+-*** Start of Measuring Strings Demo ***
+-Type a string (q - to quit):
+-s
+-The length of 's' is 1 character
+-
+-
+-============================================
+-- - - - - - - - -  Test-4  - - - - - - - - -
+-============================================
+-
+-*** Start of Measuring Strings Demo ***
+-Type a string (q - to quit):
+-Hello User
+-The length of 'Hello User' is 10 characters
+-
+-
+-============================================
+-- - - - - - - - -  Test-5  - - - - - - - - -
+-============================================
+-
+-*** Start of Measuring Strings Demo ***
+-Type a string (q - to quit):
+-This test is to check if the program runs successfully
+-The length of 'This test is to check if the program runs successfully' is 54 characters
+-
+-
+-============================================
+-- - - - - - - - -  Test-6  - - - - - - - - -
+-============================================
+-
+- *** Start of Measuring Strings Demo ***
+-Type a string (q - to quit):
+-Hello
+-The length of 'Hello' is 5 characters
+-Type a string (q - to quit):
+-q
+-*** End of Measuring Strings Demo ***
+-
+-
+-
+-
+-
+-
+ 
+ 
+diff --git a/fundamentals.c b/fundamentals.c
+index 6b5722a..d198923 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -6,7 +6,9 @@
+ // Include the header file
+ #include "fundamentals.h"
+ 
+-void fundamentals(void) {
++
++void fundamentals(void)
++{
+ 	/* Version 1 */
+ 	
+ 	// Display a message to indicate the start of the demo
+@@ -25,7 +27,8 @@ void fundamentals(void) {
+ 		// Remove the newline character at the end of the string
+ 		buffer1[strlen(buffer1) - 1] = '\0';
+ 		// Check if the user entered "q" to quit
+-		if (strcmp(buffer1, "q") != 0) {
++		if (strcmp(buffer1, "q") != 0)
++		{
+ 			// Prompt the user to input a position within the string
+ 			printf("Type the character position within the string: \n");
+ 			fgets(numInput, NUM_INPUT_SIZE, stdin);
+@@ -35,49 +38,25 @@ void fundamentals(void) {
+ 			position = atoi(numInput);
+ 
+ 			// Check if the position input is valid
+-			if (position >= strlen(buffer1)) {
++			if (position >= strlen(buffer1)) 
++			{
+ 				position = strlen(buffer1) - 1;
+ 				printf("Too big... Position reduced to max. availbale\n");
+ 			}
+ 			// Print the character found at the specified position within the string
+ 			printf("The character found at %d position is \'%c\'\n",
+-				(int)position, buffer1[position]);
+-			}	
+-		}while (strcmp(buffer1, "q") != 0);
++			(int)position, buffer1[position]);
++		}	
++	}while (strcmp(buffer1, "q") != 0);
+ 	// Display a message to indicate the end of the demo
+ 	printf("*** End of Indexing Strings Demo ***\n\n");
++}
+ 
++/* Version 2 */
+ 
+-	/* Version 2 */
+-
+-	// Display a message to indicate the start of the demo
+-	printf("*** Start of Measuring Strings Demo ***\n");
+-
+-	// Declare Variables
+-	char buffer2[BUFFER_SIZE];
+-
+-	// Using a do-while loop to prompt the user to input a string and a position until they enter "q" to quit
+-	do{
+-		// Prompt user to input a string
+-		printf("Type a string (q - to quit):\n");
+-		// Read the string entered by user and stores it in the "buffer2" array
+-		fgets(buffer2, BUFFER_SIZE, stdin);	
+-		// Removes the newline character at the end of the string
+-		buffer2[strlen(buffer2) - 1] = '\0';
+-
+-		// Check if the user entered "q" to quit
+-		if (strcmp(buffer2, "q") != 0)
+-			// Display a message indicating the length of the string
+-			printf("The length of \'%s\' is %d characters\n",
+-				buffer2, (int)strlen(buffer2));		
+-	} while (strcmp(buffer2, "q") != 0);
+-
+-	// Display a message to indicate the start of the demo
+-	printf("*** End of Measuring Strings Demo ***\n\n");
+ 
+ 
+-	/* Version 3 */
+-}
++/* Version 3 */
+ 
+ 
+ 
+diff --git a/main.c b/main.c
+index 3a298d1..0ef52a1 100644
+--- a/main.c
++++ b/main.c
+@@ -1,8 +1,8 @@
+ #define _CRT_SECURE_NO_WARNINGS
+-#include "fundamentals.h"
+-#include "manipulating.h"
++//#include "fundamentals.h"
++//#include "manipulating.h"
+ #include "converting.h"
+-#include "tokenizing.h"
++//#include "tokenizing.h"
+ 
+ // This program allows the user to choose which module to run.
+ int main (void)
+@@ -22,13 +22,13 @@ int main (void)
+         // The program then executes the selected module.
+         switch (buff[0])
+         {
+-        case '1': fundamentals () ;
++        //case '1': fundamentals () ;
+             //break;
+-        case '2': manipulating () ;
++        //case '2': manipulating () ;
+             //break;
+         case '3': converting ();
+             break;
+-        case '4': tokenizing () ;
++        //case '4': tokenizing () ;
+             //break;
+         }
+     } while (buff[0] != '0'); // The program continues to prompt the user for module selection until they choose to exit.
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+index ca90b4f..663a1d4 100644
+--- a/manipulating-testing.txt
++++ b/manipulating-testing.txt
+@@ -236,251 +236,5 @@ Type the 1st string (q - to quit):
+ q
+ *** End of Concatenatinag strinas Demo ***
+ 
+-============================================
+-- - - - - - - - -  Test-1  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-2  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-Bar
+-'Foo' string is greater than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-3  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-Foo
+-'Foo' string is equal to 'Foo'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-4  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-B
+-'Foo' string is greater than 'B'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-5  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-B
+-Type the 2nd string to compare:
+-Bar
+-'B' string is less than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-6  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-123
+-'Foo' string is greater than '123'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-7  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-123
+-Type the 2nd string to compare:
+-Bar
+-'123' string is less than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-8  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-#
+-'Foo' string is greater than '#'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-9  - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-#
+-Type the 2nd string to compare:
+-Bar
+-'#' string is less than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-10 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-
+-'Foo' string is greater than ''
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-11 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-
+-Type the 2nd string to compare:
+-Bar
+-'' string is less than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-12 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-\n
+-'Foo' string is less than '\n'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-13 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-\n
+-Type the 2nd string to compare:
+-Bar
+-'\n' string is greater than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+ 
+-============================================
+-- - - - - - - - -  Test-14 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-FOO
+-Type the 2nd string to compare:
+-Bar
+-'FOO' string is greater than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+ 
+-============================================
+-- - - - - - - - -  Test-15 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-BAR
+-'Foo' string is greater than 'BAR'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-16 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-
+-'Foo' string is greater than ' '
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-17 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-
+-Type the 2nd string to compare:
+-Bar
+-' ' string is less than 'Bar'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+-
+-============================================
+-- - - - - - - - -  Test-18 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+-Type the 2nd string to compare:
+-'Fooooooo' string is less than 'oooooooo'
+-Type the 1st string to compare (q - to quit):
+-Type the 2nd string to compare:
+-'oooooooo' string is equal to 'oooooooo'
+-Type the 1st string to compare (q - to quit):
+-Type the 2nd string to compare:
+-'oooooooo' string is equal to 'oooooooo'
+-Type the 1st string to compare (q - to quit):
+-Type the 2nd string to compare:
+-'oooooooo' string is equal to 'oooooooo'
+-Type the 1st string to compare (q - to quit):
+-Type the 2nd string to compare:
+-
+-============================================
+-- - - - - - - - -  Test-19 - - - - - - - - -
+-============================================
+-*** Start of Comparing Strings Demo ***
+-Type the 1st string to compare (q - to quit):
+-Foo
+-Type the 2nd string to compare:
+-q
+-'Foo' string is less than 'q'
+-Type the 1st string to compare (q - to quit):
+-q
+-*** End of Comparing Strings Demo ***
+diff --git a/manipulating.c b/manipulating.c
+index 473a5cd..f827db9 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -4,66 +4,31 @@
+ 
+ /**
+  * Concatenates two strings taken from the standard input
+- * Compares two strings taken from the standard input
+  */
+-void manipulating(void) {
+-  printf("*** Start of Concatenating strings Demo ***\n");
++void manipulating(void) 
++{
++    printf("*** Start of Concatenating strings Demo ***\n");
+ 
+-  char string1[BUFFER_SIZE];
+-  char string2[BUFFER_SIZE];
++    char string1[BUFFER_SIZE];
++    char string2[BUFFER_SIZE];
+ 
+-  do {
+-    printf("Type the 1st string (q - to quit): \n");
+-    fgets(string1, BUFFER_SIZE,
+-          stdin); // Store characters from stdin in string1
++    do {
++        printf("Type the 1st string (q - to quit): \n");
++        fgets(string1, BUFFER_SIZE, stdin); // Store characters from stdin in string1
+ 
+-    string1[strlen(string1) - 1] = '\0'; // Append the null character
++        string1[strlen(string1) - 1] = '\0'; // Append the null character
+ 
+-    if ((strcmp(string1, "q") != 0)) {
+-      printf("Type the 2nd string: \n");
+-      fgets(string2, BUFFER_SIZE,
+-            stdin); // Store characters from stdin in string2
++        if((strcmp(string1, "q") != 0)) 
++        {
++            printf("Type the 2nd string: \n");
++            fgets(string2, BUFFER_SIZE, stdin); // Store characters from stdin in string2
+ 
+-      string2[strlen(string2) - 1] = '\0'; // Append the null character
++            string2[strlen(string2) - 1] = '\0'; // Append the null character
+ 
+-      strcat(string1, string2); // Join string1, string2 and store in string1
+-      printf("Concatenated string is \'%s\'\n", string1);
+-    }
+-  } while (strcmp(string1, "q") != 0);
++            strcat(string1, string2); // Join string1, string2 and store in string1
++            printf("Concatenated string is \'%s\'\n", string1);
++        }
++    } while (strcmp(string1, "q") != 0); 
+ 
+-  printf("*** End of Concatenatinag strinas Demo ***\n\n");
+-
+-  printf("*** Start of Comparing Strings Demo ***\n");
+-
+-  char compare1[BUFFER_SIZE];
+-  char compare2[BUFFER_SIZE];
+-  int result;
+-
+-  do {
+-    printf("Type the 1st string to compare (q - to quit):\n");
+-    fgets(compare1, BUFFER_SIZE,
+-          stdin); // Store characters from the stdin in compare1
+-
+-    compare1[strlen(compare1) - 1] = '\0'; // Append the null character
+-
+-    if (strcmp(compare1, "q") != 0) {
+-      printf("Type the 2nd string to compare:\n");
+-      fgets(compare2, BUFFER_SIZE,
+-            stdin); // Store the characters from stdin in compare2
+-
+-      compare2[strlen(compare2) - 1] = '\0'; // Append the null character
+-
+-      result = strcmp(compare1, compare2); // Store the strcmp return value
+-
+-      if (result < 0) {
+-        printf("\'%s\' string is less than \'%s\'\n", compare1, compare2);
+-      } else if (result == 0) {
+-        printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2);
+-      } else {
+-        printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2);
+-      }
+-    }
+-  } while (strcmp(compare1, "q") != 0);
+-
+-  printf("*** End of Comparing Strings Demo ***\n\n");
++    printf("*** End of Concatenatinag strinas Demo ***\n\n");
+ }
+diff --git a/tokenizing.c b/tokenizing.c
+index b233a19..186bbaf 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -4,7 +4,6 @@
+ 
+ void tokenizing()
+ {
+-
+ 	/* Version 1 */
+ 	printf("***Start of Tokenizing Words Demo ***\n");
+ 	char words[BUFFER_SIZE];
+@@ -17,7 +16,7 @@ void tokenizing()
+ 		fgets(words, BUFFER_SIZE, stdin);
+ 		words[strlen(words) - 1] = '\0';
+ 		if (strcmp(words, "q") != 0)
+-		{
++		{	
+ 			nextWord = strtok(words, " ");
+ 			wordsCounter = 1;
+ 			while (nextWord)
+@@ -29,25 +28,19 @@ void tokenizing()
+ 	} while (strcmp(words, "q") != 0);
+ 	printf("*** End of Tokenizing Words Demo ***\n\n");
+ 
++
+ 	/* Version 2 */
+-	printf("*** Start of Tokenizing Phrases Demo ***\n");
+-	char phrases[BUFFER_SIZE];
+-	char* nextPhrase = NULL;
+-	int phrasesCounter;
+-	do {
+-		printf("Type a few phrases separated by comma(q - to quit):\n");
+-		fgets(phrases, BUFFER_SIZE, stdin);
+-		phrases[strlen(phrases) - 1] = '\0';
+-		if ((strcmp(phrases, "q") != 0)) {
+-			nextPhrase = strtok(phrases, ",");
+-			phrasesCounter = 1;
+-			while (nextPhrase) {
+-				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
+-				nextPhrase = strtok(NULL, ",");
+-			}
+-		}
+-	} while (strcmp(phrases, "q") != 0);
+-	printf("*** End of Tokenizing Phrases Demo ***\n\n");
++	//>> insert here
++
++
++	/* Version 3 */
++	//>> insert here
++
++
+ }
+ 
+ 
++int main()
++{
++	tokenizing();
++}
+\ No newline at end of file
+
+commit 12898bc7ae05e93bf9054becc2fac2fd69c0ad91
+Author: Jay Vakil <jayvakil2@gmail.com>
+Date:   Tue Apr 18 16:11:54 2023 -0400
+
+    VERSION2
+
+diff --git a/.DS_Store b/.DS_Store
+index 9c9ffdb..ca5b893 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/Copy of Final-Project-Plan.xlsx b/Copy of Final-Project-Plan.xlsx
+new file mode 100644
+index 0000000..e10b698
+Binary files /dev/null and b/Copy of Final-Project-Plan.xlsx differ
+diff --git a/Final-Project-Test-Cases.xlsx b/Final-Project-Test-Cases.xlsx
+index e24b9f5..30c015b 100644
+Binary files a/Final-Project-Test-Cases.xlsx and b/Final-Project-Test-Cases.xlsx differ
+diff --git a/complete_git_log.txt b/complete_git_log.txt
+new file mode 100644
+index 0000000..5ca261f
+--- /dev/null
++++ b/complete_git_log.txt
+@@ -0,0 +1,943 @@
++commit 41a28a2d91dcf796baa5245c1fef977353d01c6f
++Author: Jay Vakil <jayvakil2@gmail.com>
++Date:   Tue Apr 18 16:02:49 2023 -0400
++
++    VERSION1
++
++diff --git a/.DS_Store b/.DS_Store
++new file mode 100644
++index 0000000..9c9ffdb
++Binary files /dev/null and b/.DS_Store differ
++diff --git a/Final-Project-Plan.xlsx b/Final-Project-Plan.xlsx
++new file mode 100644
++index 0000000..e10b698
++Binary files /dev/null and b/Final-Project-Plan.xlsx differ
++diff --git a/Final-Project-Test-Cases.xlsx b/Final-Project-Test-Cases.xlsx
++new file mode 100644
++index 0000000..e24b9f5
++Binary files /dev/null and b/Final-Project-Test-Cases.xlsx differ
++diff --git a/conversion-testing.txt b/conversion-testing.txt
++new file mode 100644
++index 0000000..a421b64
++--- /dev/null
+++++ b/conversion-testing.txt
++@@ -0,0 +1,37 @@
+++============================================
+++- - - - - - - - -  Test-1  - - - - - - - - -
+++============================================
+++*** Start of Converting Strings to int Demo ***
+++Type an int numeric string (g - to quit):
+++123
+++Converted number is 123
+++============================================
+++- - - - - - - - -  Test-2  - - - - - - - - -
+++============================================
+++Type an int numeric string (g - to quit):
+++-456
+++Converted number is -456
+++============================================
+++- - - - - - - - -  Test-3  - - - - - - - - -
+++============================================
+++Type an int numeric string (g - to quit):
+++0
+++Converted number is 0
+++============================================
+++- - - - - - - - -  Test-4  - - - - - - - - -
+++============================================
+++Type an int numeric string (g - to quit):
+++abc
+++Converted number is 0
+++============================================
+++- - - - - - - - -  Test-5  - - - - - - - - -
+++============================================
+++Type an int numeric string (g - to quit):
+++1.5
+++Converted number is 1
+++============================================
+++- - - - - - - - -  Test-6  - - - - - - - - -
+++============================================
+++Type an int numeric string (g - to quit):
+++2147483648
+++Converted number is -2147483648
++diff --git a/converting.c b/converting.c
++new file mode 100644
++index 0000000..cad7ce4
++--- /dev/null
+++++ b/converting.c
++@@ -0,0 +1,37 @@
+++// include the header file
+++#include "converting.h"
+++
+++// define a compiler flag to disable warnings related to certain functions
+++#define _CRT_SECURE_NO_WARNINGS
+++#define BUFFER_SIZE 80  // define a constant value for the maximum size of a string buffer
+++
+++void converting(void)  // define the main function for this module
+++{
+++    // v1 - Demonstrate conversion of strings to integers using atoi()
+++
+++    printf("*** Start of Converting Strings to int Demo ***\n");
+++
+++    char intString[BUFFER_SIZE];  // define a character array to hold the string input from the user
+++    int intNumber;  // define an integer variable to hold the converted numeric value
+++
+++    do {
+++        printf("Type an int numeric string (g - to quit):\n");
+++         // read a string from standard input and store it in the buffer
+++        fgets(intString, BUFFER_SIZE, stdin); 
+++        intString[strlen(intString) - 1] = '\0';  // remove the newline character at the end of the string
+++        // convert the string to an integer using the atoi() function
+++        if (strcmp(intString, "q") != 0) 
+++        { 
+++            intNumber = atoi(intString);  
+++            printf("Converted number is %d\n", intNumber);
+++        }
+++    } while (strcmp(intString, "q") != 0);  // continue looping until the user inputs "q"
+++
+++    printf("*** End of Converting Strings to int Demo ***\n\n");
+++
+++    /* Version 2 */
+++    // (No code is provided for Version 2)
+++
+++    /* Version 3 */
+++    // (No code is provided for Version 3)
+++}   
++\ No newline at end of file
++diff --git a/converting.h b/converting.h
++new file mode 100644
++index 0000000..0513321
++--- /dev/null
+++++ b/converting.h
++@@ -0,0 +1,8 @@
+++// CONVERTING MODULE HEADER
+++#ifndef _CONVERTING_H_
+++#define _CONVERTING_H_
+++#include <stdio.h>
+++#include <string.h> 
+++#include <stdlib.h> 
+++void converting (void);
+++#endif
++diff --git a/fundamentals - testing.txt b/fundamentals - testing.txt
++new file mode 100644
++index 0000000..6af0292
++--- /dev/null
+++++ b/fundamentals - testing.txt	
++@@ -0,0 +1,74 @@
+++============================================
+++- - - - - - - - -  Test-1  - - - - - - - - -
+++============================================
+++
+++*** Start of Indexing strings Demo ***
+++Type not empty string (q - to quit) :
+++q
+++*** End of Indexing strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-2  - - - - - - - - -
+++============================================
+++
+++*** Start of Indexing strings Demo ***
+++Type not empty string (q - to quit) :
+++Hello
+++Type the character position within the string :
+++
+++============================================
+++- - - - - - - - -  Test-3  - - - - - - - - -
+++============================================
+++
+++*** Start of Indexing strings Demo ***
+++Type not empty string (q - to quit) :
+++Hello
+++Type the character position within the string :
+++3
+++The character found at 3 position is 'l'
+++Type not empty string (q - to quit) :
+++q
+++*** End of Indexing strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-4  - - - - - - - - -
+++============================================
+++
+++*** Start of Indexing strings Demo ***
+++Type not empty string (q - to quit) :
+++Hello User
+++Type the character position within the string :
+++
+++============================================
+++- - - - - - - - -  Test-5  - - - - - - - - -
+++============================================
+++
+++*** Start of Indexing strings Demo ***
+++Type not empty string (q - to quit) :
+++Hello
+++Type the character position within the string :
+++8
+++Too big... Position reduced to max. available
+++The character found at 4 position is 'o'
+++Type not empty string (q - to quit) :
+++q
+++*** End of Indexing strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-6  - - - - - - - - -
+++============================================
+++
+++*** Start of Indexing strings Demo ***
+++Type not empty string (q - to quit) :
+++
+++Type the character position within the string :
+++0
+++Too big... Position reduced to max. available
+++The character found at -1 position is ''
+++Type not empty string (q - to quit) :
+++q
+++*** End of Indexing strinas Demo ***
+++
+++
+++
+++
++diff --git a/fundamentals.c b/fundamentals.c
++new file mode 100644
++index 0000000..d198923
++--- /dev/null
+++++ b/fundamentals.c
++@@ -0,0 +1,62 @@
+++// FUNDAMENTALS MODULE SOURCE
+++#define _CRT_SECURE_NO_WARNINGS
+++// Declare Macros
+++#define BUFFER_SIZE		80
+++#define NUM_INPUT_SIZE  10
+++// Include the header file
+++#include "fundamentals.h"
+++
+++
+++void fundamentals(void)
+++{
+++	/* Version 1 */
+++	
+++	// Display a message to indicate the start of the demo
+++	printf("*** Start of Indexing Strings Demo ***\n");
+++
+++	// Declare Variables
+++	char buffer1[BUFFER_SIZE];
+++	char numInput[NUM_INPUT_SIZE];
+++	size_t position;
+++
+++	// Using a do-while loop to prompt the user to input a string and a position until they enter "q" to quit
+++	do {
+++		// Prompt the user to input a non-empty string
+++		printf("Type not empty string (q - to quit) : \n");
+++		fgets(buffer1, BUFFER_SIZE, stdin);
+++		// Remove the newline character at the end of the string
+++		buffer1[strlen(buffer1) - 1] = '\0';
+++		// Check if the user entered "q" to quit
+++		if (strcmp(buffer1, "q") != 0)
+++		{
+++			// Prompt the user to input a position within the string
+++			printf("Type the character position within the string: \n");
+++			fgets(numInput, NUM_INPUT_SIZE, stdin);
+++			// Remove the newline character at the end of the string
+++			numInput[strlen(numInput) - 1] = '\0';
+++			// Convert the position input to an integer
+++			position = atoi(numInput);
+++
+++			// Check if the position input is valid
+++			if (position >= strlen(buffer1)) 
+++			{
+++				position = strlen(buffer1) - 1;
+++				printf("Too big... Position reduced to max. availbale\n");
+++			}
+++			// Print the character found at the specified position within the string
+++			printf("The character found at %d position is \'%c\'\n",
+++			(int)position, buffer1[position]);
+++		}	
+++	}while (strcmp(buffer1, "q") != 0);
+++	// Display a message to indicate the end of the demo
+++	printf("*** End of Indexing Strings Demo ***\n\n");
+++}
+++
+++/* Version 2 */
+++
+++
+++
+++/* Version 3 */
+++
+++
+++
++diff --git a/fundamentals.h b/fundamentals.h
++new file mode 100644
++index 0000000..e00d53c
++--- /dev/null
+++++ b/fundamentals.h
++@@ -0,0 +1,8 @@
+++// FUNDAMENTALS MODULE HEADER
+++#ifndef _FUNDAMENTALS_H_
+++#define _FUNDAMENTALS_H_
+++#include <stdio.h>
+++#include <stdlib.h>
+++#include <string.h>
+++void fundamentals(void);
+++#endif
++\ No newline at end of file
++diff --git a/main-testing.txt b/main-testing.txt
++new file mode 100644
++index 0000000..e69de29
++diff --git a/main.c b/main.c
++new file mode 100644
++index 0000000..85faf93
++--- /dev/null
+++++ b/main.c
++@@ -0,0 +1,36 @@
+++#define _CRT_SECURE_NO_WARNINGS
+++#include "fundamentals.h"
+++#include "manipulating.h"
+++#include "converting.h"
+++#include "tokenizing.h"
+++
+++// This program allows the user to choose which module to run.
+++int main(void)
+++{
+++    char buff[10];
+++    do
+++    {
+++        // The program provides a menu of options for the user to choose from.
+++        printf("1 - Fundamentals\n");
+++        printf("2 - Manipulation\n");
+++        printf("3 - Converting\n");
+++        printf("4 - Tokenizing\n");
+++        printf("0 - Exit\n");
+++        printf("Which module to run? \n");
+++        // The user enters a number corresponding to the module they want to run.
+++        fgets(buff, 10, stdin);
+++        // The program then executes the selected module.
+++        switch (buff[0])
+++        {
+++        case '1': fundamentals();
+++            //break;
+++        case '2': manipulating();
+++            //break;
+++        case '3': converting();
+++            break;
+++        case '4': tokenizing();
+++            //break;
+++        }
+++    } while (buff[0] != '0'); // The program continues to prompt the user for module selection until they choose to exit.
+++    return 0;
+++}
++\ No newline at end of file
++diff --git a/manipulating-testing.txt b/manipulating-testing.txt
++new file mode 100644
++index 0000000..663a1d4
++--- /dev/null
+++++ b/manipulating-testing.txt
++@@ -0,0 +1,240 @@
+++============================================
+++- - - - - - - - -  Test-1  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-2  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++Bar
+++Concatenated string is 'FooBar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-3  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++Foo
+++Concatenated string is 'FooFoo'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-4  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++B
+++Concatenated string is 'FooB'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-5  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++B
+++Type the 2nd string:
+++Bar
+++Concatenated string is 'BBar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-6  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++123
+++Concatenated string is 'Foo123'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-7  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++123
+++Type the 2nd string:
+++Bar
+++Concatenated string is '123Bar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-8  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++#
+++Concatenated string is 'Foo#'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-9  - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++#
+++Type the 2nd string:
+++Bar
+++Concatenated string is '#Bar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-10 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++
+++Concatenated string is 'Foo'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++   
+++============================================
+++- - - - - - - - -  Test-11 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++
+++Type the 2nd string:
+++Bar
+++Concatenated string is 'Bar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-12 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++FOO
+++Type the 2nd string:
+++Bar
+++Concatenated string is 'FOOBar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-13 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++\n
+++Concatenated string is 'Foo\n'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-14 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++\n
+++Type the 2nd string:
+++Bar
+++Concatenated string is '\nBar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-15 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++BAR
+++Concatenated string is 'FooBAR'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-16 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++
+++Concatenated string is 'Foo '
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-17 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++
+++Type the 2nd string:
+++Bar
+++Concatenated string is ' Bar'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++============================================
+++- - - - - - - - -  Test-18 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+++Type the 2nd string:
+++zsh: trace trap  ./manipulating
+++
+++============================================
+++- - - - - - - - -  Test-19 - - - - - - - - -
+++============================================
+++*** Start of Concatenating strings Demo ***
+++Type the 1st string (q - to quit):
+++Foo
+++Type the 2nd string:
+++q
+++Concatenated string is 'Fooq'
+++Type the 1st string (q - to quit):
+++q
+++*** End of Concatenatinag strinas Demo ***
+++
+++
+++
++diff --git a/manipulating.c b/manipulating.c
++new file mode 100644
++index 0000000..f827db9
++--- /dev/null
+++++ b/manipulating.c
++@@ -0,0 +1,34 @@
+++#define BUFFER_SIZE 10
+++// MANIPULATING HEADER
+++#include "manipulating.h"
+++
+++/**
+++ * Concatenates two strings taken from the standard input
+++ */
+++void manipulating(void) 
+++{
+++    printf("*** Start of Concatenating strings Demo ***\n");
+++
+++    char string1[BUFFER_SIZE];
+++    char string2[BUFFER_SIZE];
+++
+++    do {
+++        printf("Type the 1st string (q - to quit): \n");
+++        fgets(string1, BUFFER_SIZE, stdin); // Store characters from stdin in string1
+++
+++        string1[strlen(string1) - 1] = '\0'; // Append the null character
+++
+++        if((strcmp(string1, "q") != 0)) 
+++        {
+++            printf("Type the 2nd string: \n");
+++            fgets(string2, BUFFER_SIZE, stdin); // Store characters from stdin in string2
+++
+++            string2[strlen(string2) - 1] = '\0'; // Append the null character
+++
+++            strcat(string1, string2); // Join string1, string2 and store in string1
+++            printf("Concatenated string is \'%s\'\n", string1);
+++        }
+++    } while (strcmp(string1, "q") != 0); 
+++
+++    printf("*** End of Concatenatinag strinas Demo ***\n\n");
+++}
++diff --git a/manipulating.h b/manipulating.h
++new file mode 100644
++index 0000000..c318635
++--- /dev/null
+++++ b/manipulating.h
++@@ -0,0 +1,7 @@
+++// MANIPULATING MODULE HEADER
+++#ifndef _MANIPULATING_H_
+++#define _MANIPULATING_H_
+++#include <stdio.h>
+++#include <string.h>
+++void manipulating(void);
+++#endif
++diff --git a/tokenizing-testing.txt b/tokenizing-testing.txt
++new file mode 100644
++index 0000000..bc9a548
++--- /dev/null
+++++ b/tokenizing-testing.txt
++@@ -0,0 +1,243 @@
+++============================================
+++- - - - - - - - -  Test-1  - - - - - - - - -
+++============================================
+++***Start of Tokenizing Words Demo ***
+++Type a few words seperated by space (q - to quit):
+++hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello 
+++Word #1 is 'hello'
+++Word #2 is 'hello'
+++Word #3 is 'hello'
+++Word #4 is 'hello'
+++Word #5 is 'hello'
+++Word #6 is 'hello'
+++Word #7 is 'hello'
+++Word #8 is 'hello'
+++Word #9 is 'hello'
+++Word #10 is 'hello'
+++Word #11 is 'hello'
+++Word #12 is 'hello'
+++Word #13 is 'hello'
+++Word #14 is 'hello'
+++Word #15 is 'hello'
+++Word #16 is 'hello'
+++Word #17 is 'hello'
+++Word #18 is 'hello'
+++Word #19 is 'hello'
+++Word #20 is 'hello'
+++Word #21 is 'hello'
+++Word #22 is 'hello'
+++Word #23 is 'hello'
+++Word #24 is 'hello'
+++Word #25 is 'hello'
+++Word #26 is 'hello'
+++Word #27 is 'hello'
+++Word #28 is 'hello'
+++Word #29 is 'hello'
+++Word #30 is 'hello'
+++Word #31 is 'hello'
+++Word #32 is 'hello'
+++Word #33 is 'hello'
+++Word #34 is 'hello'
+++Word #35 is 'hello'
+++Word #36 is 'hello'
+++Word #37 is 'hello'
+++Word #38 is 'hello'
+++Word #39 is 'hello'
+++Word #40 is 'hello'
+++Word #41 is 'hello'
+++Word #42 is 'hello'
+++Word #43 is 'hello'
+++Word #44 is 'hello'
+++Word #45 is 'hello'
+++Word #46 is 'hello'
+++Word #47 is 'hello'
+++Word #48 is 'hello'
+++Word #49 is 'hello'
+++Word #50 is 'hell'
+++Type a few words seperated by space (q - to quit):
+++Word #1 is 'hello'
+++Word #2 is 'hello'
+++Word #3 is 'hello'
+++Word #4 is 'hello'
+++Word #5 is 'hello'
+++Word #6 is 'hello'
+++Word #7 is 'hello'
+++Word #8 is 'hello'
+++Word #9 is 'hello'
+++Word #10 is 'hello'
+++Word #11 is 'hello'
+++Word #12 is 'hello'
+++Word #13 is 'hello'
+++Word #14 is 'hello'
+++Word #15 is 'hello'
+++Word #16 is 'hello'
+++Word #17 is 'hello'
+++Word #18 is 'hello'
+++Word #19 is 'hello'
+++Word #20 is 'hello'
+++Word #21 is 'hello'
+++Word #22 is 'hello'
+++Word #23 is 'hello'
+++Word #24 is 'hello'
+++Word #25 is 'hello'
+++Word #26 is 'hello'
+++Word #27 is 'hello'
+++Word #28 is 'hello'
+++Word #29 is 'hello'
+++Word #30 is 'hello'
+++Word #31 is 'hello'
+++Word #32 is 'hello'
+++Word #33 is 'hello'
+++Word #34 is 'hello'
+++Word #35 is 'hello'
+++Word #36 is 'hello'
+++Word #37 is 'hello'
+++Word #38 is 'hello'
+++Word #39 is 'hello'
+++Word #40 is 'hello'
+++Word #41 is 'hello'
+++Word #42 is 'hello'
+++Word #43 is 'hello'
+++Word #44 is 'hello'
+++Word #45 is 'hello'
+++Word #46 is 'hello'
+++Word #47 is 'hello'
+++Word #48 is 'hello'
+++Word #49 is 'hello'
+++Word #50 is 'hel'
+++Type a few words seperated by space (q - to quit):
+++Word #1 is 'o'
+++Word #2 is 'hello'
+++Word #3 is 'hello'
+++Word #4 is 'hello'
+++Word #5 is 'hello'
+++Word #6 is 'hello'
+++Word #7 is 'hello'
+++Word #8 is 'hello'
+++Word #9 is 'hello'
+++Word #10 is 'hello'
+++Word #11 is 'hello'
+++Word #12 is 'hello'
+++Word #13 is 'hello'
+++Word #14 is 'hello'
+++Word #15 is 'hello'
+++Word #16 is 'hello'
+++Word #17 is 'hello'
+++Word #18 is 'hello'
+++Word #19 is 'hello'
+++Word #20 is 'hello'
+++Word #21 is 'hello'
+++Word #22 is 'hello'
+++Word #23 is 'hello'
+++Word #24 is 'hello'
+++Word #25 is 'hello'
+++Word #26 is 'hello'
+++Word #27 is 'hello'
+++Word #28 is 'hello'
+++Word #29 is 'hello'
+++Word #30 is 'hello'
+++Word #31 is 'hello'
+++Word #32 is 'hello'
+++Word #33 is 'hello'
+++Word #34 is 'hello'
+++Word #35 is 'hello'
+++Word #36 is 'hello'
+++Word #37 is 'hello'
+++Word #38 is 'hello'
+++Word #39 is 'hello'
+++Word #40 is 'hello'
+++Word #41 is 'hello'
+++Word #42 is 'hello'
+++Word #43 is 'hello'
+++Word #44 is 'hello'
+++Word #45 is 'hello'
+++Word #46 is 'hello'
+++Word #47 is 'hello'
+++Word #48 is 'hello'
+++Word #49 is 'hello'
+++Word #50 is 'hello'
+++Word #51 is 'he'
+++Type a few words seperated by space (q - to quit):
+++Word #1 is 'lo'
+++Word #2 is 'hello'
+++Word #3 is 'hello'
+++Word #4 is 'hello'
+++Word #5 is 'hello'
+++Word #6 is 'hello'
+++Word #7 is 'hello'
+++Word #8 is 'hello'
+++Word #9 is 'hello'
+++Word #10 is 'hello'
+++Word #11 is 'hello'
+++Word #12 is 'hello'
+++Word #13 is 'hello'
+++Word #14 is 'hello'
+++Word #15 is 'hello'
+++Word #16 is 'hello'
+++Word #17 is 'hello'
+++Word #18 is 'hello'
+++Word #19 is 'hello'
+++Word #20 is 'hello'
+++Word #21 is 'hello'
+++Word #22 is 'hello'
+++Word #23 is 'hello'
+++Word #24 is 'hello'
+++Word #25 is 'hello'
+++Word #26 is 'hello'
+++Word #27 is 'hello'
+++Word #28 is 'hello'
+++Word #29 is 'hello'
+++Word #30 is 'hello'
+++Word #31 is 'hello'
+++Word #32 is 'hello'
+++Word #33 is 'hello'
+++Word #34 is 'hello'
+++Word #35 is 'hello'
+++Word #36 is 'hello'
+++Word #37 is 'hello'
+++Type a few words seperated by space (q - to quit):
+++
+++
+++============================================
+++- - - - - - - - -  Test-2  - - - - - - - - -
+++============================================
+++
+++Type a few words seperated by space (q - to quit):
+++q
+++*** End of Tokenizing Words Demo ***
+++
+++
+++============================================
+++- - - - - - - - -  Test-3  - - - - - - - - -
+++============================================
+++***Start of Tokenizing Words Demo ***
+++Type a few words seperated by space (q - to quit):
+++
+++Type a few words seperated by space (q - to quit):
+++
+++============================================
+++- - - - - - - - -  Test-4  - - - - - - - - -
+++============================================
+++Type a few words seperated by space (q - to quit):
+++hello
+++Word #1 is 'hello'
+++Type a few words seperated by space (q - to quit):
+++
+++============================================
+++- - - - - - - - -  Test-5  - - - - - - - - -
+++============================================
+++Type a few words seperated by space (q - to quit):
+++hello world
+++Word #1 is 'hello'
+++Word #2 is 'world'
+++Type a few words seperated by space (q - to quit):
+++
+++============================================
+++- - - - - - - - -  Test-6  - - - - - - - - -
+++============================================
+++
+++***Start of Tokenizing Words Demo ***
+++Type a few words seperated by space (q - to quit):
+++        hello
+++Word #1 is '    hello'
+++Type a few words seperated by space (q - to quit):
++\ No newline at end of file
++diff --git a/tokenizing.c b/tokenizing.c
++new file mode 100644
++index 0000000..186bbaf
++--- /dev/null
+++++ b/tokenizing.c
++@@ -0,0 +1,46 @@
+++#define _CRT_SECURE_NO_WARNINGS
+++#define BUFFER_SIZE 300
+++#include "tokenizing.h"
+++
+++void tokenizing()
+++{
+++	/* Version 1 */
+++	printf("***Start of Tokenizing Words Demo ***\n");
+++	char words[BUFFER_SIZE];
+++	char* nextWord = NULL;
+++	int wordsCounter;
+++
+++	do
+++	{
+++		printf("Type a few words seperated by space (q - to quit):\n");
+++		fgets(words, BUFFER_SIZE, stdin);
+++		words[strlen(words) - 1] = '\0';
+++		if (strcmp(words, "q") != 0)
+++		{	
+++			nextWord = strtok(words, " ");
+++			wordsCounter = 1;
+++			while (nextWord)
+++			{
+++				printf("Word #%d is \'%s\'n", wordsCounter++, nextWord);
+++				nextWord = strtok(NULL, " ");
+++			}
+++		}
+++	} while (strcmp(words, "q") != 0);
+++	printf("*** End of Tokenizing Words Demo ***\n\n");
+++
+++
+++	/* Version 2 */
+++	//>> insert here
+++
+++
+++	/* Version 3 */
+++	//>> insert here
+++
+++
+++}
+++
+++
+++int main()
+++{
+++	tokenizing();
+++}
++\ No newline at end of file
++diff --git a/tokenizing.h b/tokenizing.h
++new file mode 100644
++index 0000000..6245f6c
++--- /dev/null
+++++ b/tokenizing.h
++@@ -0,0 +1,6 @@
+++#ifndef _TOKENIZING_H_
+++#define _TOKENIZING_H_
+++#include <stdio.h>
+++#include <string.h>
+++void tokenizing(void);
+++#endif
++\ No newline at end of file
+diff --git a/conversion-testing.txt b/conversion-testing.txt
+index a421b64..0013015 100644
+--- a/conversion-testing.txt
++++ b/conversion-testing.txt
+@@ -35,3 +35,40 @@ Converted number is 1
+ Type an int numeric string (g - to quit):
+ 2147483648
+ Converted number is -2147483648
++============================================
++- - - - - - - - -  Test-7  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++12.34
++Converted number is 12.340000
++============================================
++- - - - - - - - -  Test-8  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++12.3a4
++Converted number is 12.300000
++============================================
++- - - - - - - - -  Test-9  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++q
++*** End of Converting Strings to double Demo ***
++============================================
++- - - - - - - - -  Test-10  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++1.7976931348623157E+308
++Converted number is 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000
++============================================
++- - - - - - - - -  Test-11  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++2.225074e-308
++Converted number is 0.000000
++============================================
++- - - - - - - - -  Test-12  - - - - - - - - -
++============================================
++Type the double numeric string (q - to quit): 
++2.23E-308
++Converted number is 0.000000
++
+diff --git a/converting.c b/converting.c
+index cad7ce4..ed36d5c 100644
+--- a/converting.c
++++ b/converting.c
+@@ -5,17 +5,16 @@
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 80  // define a constant value for the maximum size of a string buffer
+ 
+-void converting(void)  // define the main function for this module
++void converting(void) 
+ {
+     // v1 - Demonstrate conversion of strings to integers using atoi()
+-
+     printf("*** Start of Converting Strings to int Demo ***\n");
+ 
+     char intString[BUFFER_SIZE];  // define a character array to hold the string input from the user
+     int intNumber;  // define an integer variable to hold the converted numeric value
+ 
+     do {
+-        printf("Type an int numeric string (g - to quit):\n");
++        printf("Type an int numeric string (q - to quit):\n");
+          // read a string from standard input and store it in the buffer
+         fgets(intString, BUFFER_SIZE, stdin); 
+         intString[strlen(intString) - 1] = '\0';  // remove the newline character at the end of the string
+@@ -30,7 +29,33 @@ void converting(void)  // define the main function for this module
+     printf("*** End of Converting Strings to int Demo ***\n\n");
+ 
+     /* Version 2 */
+-    // (No code is provided for Version 2)
++    // prints a message indicating the start of the program.
++    printf("*** Start of Converting Strings to double Demo ***\n");
++
++    // The following line defines the size of the buffer.
++    char doubleString[BUFFER_SIZE];
++    double doubleNumber;//variable
++
++    //The following code will loop until the user types "q".
++    do
++    {
++        // The following line prompts the user to type a double numeric string.
++        printf("Type the double numeric string (q - to quit): \n");
++
++        // The following line reads a string from the user and stores it in doubleString.
++        fgets(doubleString, BUFFER_SIZE, stdin);
++
++        // The following line replaces the last character in doubleString with '\0'.
++        doubleString[strlen(doubleString) - 1] = '\0';
++
++        // The following lines check whether the user typed "q".
++        // If not, the string is converted to a double value using the atof function and printed.
++        if (strcmp(doubleString, "q") != 0) {
++            doubleNumber = atof(doubleString);
++            printf("Converted number is %f\n", doubleNumber);
++        }
++    } while (strcmp(doubleString, "q") != 0);// The following line checks whether the user typed "g".
++    printf("*** End of Converting Strings to double Demo ***\n\n");
+ 
+     /* Version 3 */
+     // (No code is provided for Version 3)
+diff --git a/cprfinal b/cprfinal
+new file mode 100644
+index 0000000..9802b0b
+Binary files /dev/null and b/cprfinal differ
+diff --git a/fundamentals - testing.txt b/fundamentals - testing.txt
+index 6af0292..c6e7287 100644
+--- a/fundamentals - testing.txt	
++++ b/fundamentals - testing.txt	
+@@ -1,3 +1,6 @@
++
++VERSION-1 TEST CASES
++
+ ============================================
+ - - - - - - - - -  Test-1  - - - - - - - - -
+ ============================================
+@@ -70,5 +73,75 @@ q
+ *** End of Indexing strinas Demo ***
+ 
+ 
++VERSION-2 TEST CASES
++
++
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++q
++*** End of Measuring Strings Demo ***
++
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++
++The length of '' is 0 characters
++
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++s
++The length of 's' is 1 character
++
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++Hello User
++The length of 'Hello User' is 10 characters
++
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++
++*** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++This test is to check if the program runs successfully
++The length of 'This test is to check if the program runs successfully' is 54 characters
++
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++
++ *** Start of Measuring Strings Demo ***
++Type a string (q - to quit):
++Hello
++The length of 'Hello' is 5 characters
++Type a string (q - to quit):
++q
++*** End of Measuring Strings Demo ***
++
++
++
++
++
++
+ 
+ 
+diff --git a/fundamentals.c b/fundamentals.c
+index d198923..6b5722a 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -6,9 +6,7 @@
+ // Include the header file
+ #include "fundamentals.h"
+ 
+-
+-void fundamentals(void)
+-{
++void fundamentals(void) {
+ 	/* Version 1 */
+ 	
+ 	// Display a message to indicate the start of the demo
+@@ -27,8 +25,7 @@ void fundamentals(void)
+ 		// Remove the newline character at the end of the string
+ 		buffer1[strlen(buffer1) - 1] = '\0';
+ 		// Check if the user entered "q" to quit
+-		if (strcmp(buffer1, "q") != 0)
+-		{
++		if (strcmp(buffer1, "q") != 0) {
+ 			// Prompt the user to input a position within the string
+ 			printf("Type the character position within the string: \n");
+ 			fgets(numInput, NUM_INPUT_SIZE, stdin);
+@@ -38,25 +35,49 @@ void fundamentals(void)
+ 			position = atoi(numInput);
+ 
+ 			// Check if the position input is valid
+-			if (position >= strlen(buffer1)) 
+-			{
++			if (position >= strlen(buffer1)) {
+ 				position = strlen(buffer1) - 1;
+ 				printf("Too big... Position reduced to max. availbale\n");
+ 			}
+ 			// Print the character found at the specified position within the string
+ 			printf("The character found at %d position is \'%c\'\n",
+-			(int)position, buffer1[position]);
+-		}	
+-	}while (strcmp(buffer1, "q") != 0);
++				(int)position, buffer1[position]);
++			}	
++		}while (strcmp(buffer1, "q") != 0);
+ 	// Display a message to indicate the end of the demo
+ 	printf("*** End of Indexing Strings Demo ***\n\n");
+-}
+ 
+-/* Version 2 */
+ 
++	/* Version 2 */
++
++	// Display a message to indicate the start of the demo
++	printf("*** Start of Measuring Strings Demo ***\n");
+ 
++	// Declare Variables
++	char buffer2[BUFFER_SIZE];
++
++	// Using a do-while loop to prompt the user to input a string and a position until they enter "q" to quit
++	do{
++		// Prompt user to input a string
++		printf("Type a string (q - to quit):\n");
++		// Read the string entered by user and stores it in the "buffer2" array
++		fgets(buffer2, BUFFER_SIZE, stdin);	
++		// Removes the newline character at the end of the string
++		buffer2[strlen(buffer2) - 1] = '\0';
+ 
+-/* Version 3 */
++		// Check if the user entered "q" to quit
++		if (strcmp(buffer2, "q") != 0)
++			// Display a message indicating the length of the string
++			printf("The length of \'%s\' is %d characters\n",
++				buffer2, (int)strlen(buffer2));		
++	} while (strcmp(buffer2, "q") != 0);
++
++	// Display a message to indicate the start of the demo
++	printf("*** End of Measuring Strings Demo ***\n\n");
++
++
++	/* Version 3 */
++}
+ 
+ 
+ 
+diff --git a/main.c b/main.c
+index 85faf93..3a298d1 100644
+--- a/main.c
++++ b/main.c
+@@ -5,10 +5,10 @@
+ #include "tokenizing.h"
+ 
+ // This program allows the user to choose which module to run.
+-int main(void)
++int main (void)
+ {
+-    char buff[10];
+-    do
++    char buff [10];
++    do 
+     {
+         // The program provides a menu of options for the user to choose from.
+         printf("1 - Fundamentals\n");
+@@ -16,19 +16,19 @@ int main(void)
+         printf("3 - Converting\n");
+         printf("4 - Tokenizing\n");
+         printf("0 - Exit\n");
+-        printf("Which module to run? \n");
++        printf("Which module to run? \n"); 
+         // The user enters a number corresponding to the module they want to run.
+-        fgets(buff, 10, stdin);
++        fgets (buff, 10, stdin);
+         // The program then executes the selected module.
+         switch (buff[0])
+         {
+-        case '1': fundamentals();
++        case '1': fundamentals () ;
+             //break;
+-        case '2': manipulating();
++        case '2': manipulating () ;
+             //break;
+-        case '3': converting();
++        case '3': converting ();
+             break;
+-        case '4': tokenizing();
++        case '4': tokenizing () ;
+             //break;
+         }
+     } while (buff[0] != '0'); // The program continues to prompt the user for module selection until they choose to exit.
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+index 663a1d4..ca90b4f 100644
+--- a/manipulating-testing.txt
++++ b/manipulating-testing.txt
+@@ -236,5 +236,251 @@ Type the 1st string (q - to quit):
+ q
+ *** End of Concatenatinag strinas Demo ***
+ 
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++Bar
++'Foo' string is greater than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++Foo
++'Foo' string is equal to 'Foo'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++B
++'Foo' string is greater than 'B'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++B
++Type the 2nd string to compare:
++Bar
++'B' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++123
++'Foo' string is greater than '123'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-7  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++123
++Type the 2nd string to compare:
++Bar
++'123' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-8  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++#
++'Foo' string is greater than '#'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-9  - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++#
++Type the 2nd string to compare:
++Bar
++'#' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-10 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++
++'Foo' string is greater than ''
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-11 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++
++Type the 2nd string to compare:
++Bar
++'' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-12 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++\n
++'Foo' string is less than '\n'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-13 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++\n
++Type the 2nd string to compare:
++Bar
++'\n' string is greater than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
+ 
++============================================
++- - - - - - - - -  Test-14 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++FOO
++Type the 2nd string to compare:
++Bar
++'FOO' string is greater than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
+ 
++============================================
++- - - - - - - - -  Test-15 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++BAR
++'Foo' string is greater than 'BAR'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-16 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++
++'Foo' string is greater than ' '
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-17 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++
++Type the 2nd string to compare:
++Bar
++' ' string is less than 'Bar'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
++
++============================================
++- - - - - - - - -  Test-18 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
++Type the 2nd string to compare:
++'Fooooooo' string is less than 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++'oooooooo' string is equal to 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++'oooooooo' string is equal to 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++'oooooooo' string is equal to 'oooooooo'
++Type the 1st string to compare (q - to quit):
++Type the 2nd string to compare:
++
++============================================
++- - - - - - - - -  Test-19 - - - - - - - - -
++============================================
++*** Start of Comparing Strings Demo ***
++Type the 1st string to compare (q - to quit):
++Foo
++Type the 2nd string to compare:
++q
++'Foo' string is less than 'q'
++Type the 1st string to compare (q - to quit):
++q
++*** End of Comparing Strings Demo ***
+diff --git a/manipulating.c b/manipulating.c
+index f827db9..473a5cd 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -4,31 +4,66 @@
+ 
+ /**
+  * Concatenates two strings taken from the standard input
++ * Compares two strings taken from the standard input
+  */
+-void manipulating(void) 
+-{
+-    printf("*** Start of Concatenating strings Demo ***\n");
++void manipulating(void) {
++  printf("*** Start of Concatenating strings Demo ***\n");
+ 
+-    char string1[BUFFER_SIZE];
+-    char string2[BUFFER_SIZE];
++  char string1[BUFFER_SIZE];
++  char string2[BUFFER_SIZE];
+ 
+-    do {
+-        printf("Type the 1st string (q - to quit): \n");
+-        fgets(string1, BUFFER_SIZE, stdin); // Store characters from stdin in string1
++  do {
++    printf("Type the 1st string (q - to quit): \n");
++    fgets(string1, BUFFER_SIZE,
++          stdin); // Store characters from stdin in string1
+ 
+-        string1[strlen(string1) - 1] = '\0'; // Append the null character
++    string1[strlen(string1) - 1] = '\0'; // Append the null character
+ 
+-        if((strcmp(string1, "q") != 0)) 
+-        {
+-            printf("Type the 2nd string: \n");
+-            fgets(string2, BUFFER_SIZE, stdin); // Store characters from stdin in string2
++    if ((strcmp(string1, "q") != 0)) {
++      printf("Type the 2nd string: \n");
++      fgets(string2, BUFFER_SIZE,
++            stdin); // Store characters from stdin in string2
+ 
+-            string2[strlen(string2) - 1] = '\0'; // Append the null character
++      string2[strlen(string2) - 1] = '\0'; // Append the null character
+ 
+-            strcat(string1, string2); // Join string1, string2 and store in string1
+-            printf("Concatenated string is \'%s\'\n", string1);
+-        }
+-    } while (strcmp(string1, "q") != 0); 
++      strcat(string1, string2); // Join string1, string2 and store in string1
++      printf("Concatenated string is \'%s\'\n", string1);
++    }
++  } while (strcmp(string1, "q") != 0);
+ 
+-    printf("*** End of Concatenatinag strinas Demo ***\n\n");
++  printf("*** End of Concatenatinag strinas Demo ***\n\n");
++
++  printf("*** Start of Comparing Strings Demo ***\n");
++
++  char compare1[BUFFER_SIZE];
++  char compare2[BUFFER_SIZE];
++  int result;
++
++  do {
++    printf("Type the 1st string to compare (q - to quit):\n");
++    fgets(compare1, BUFFER_SIZE,
++          stdin); // Store characters from the stdin in compare1
++
++    compare1[strlen(compare1) - 1] = '\0'; // Append the null character
++
++    if (strcmp(compare1, "q") != 0) {
++      printf("Type the 2nd string to compare:\n");
++      fgets(compare2, BUFFER_SIZE,
++            stdin); // Store the characters from stdin in compare2
++
++      compare2[strlen(compare2) - 1] = '\0'; // Append the null character
++
++      result = strcmp(compare1, compare2); // Store the strcmp return value
++
++      if (result < 0) {
++        printf("\'%s\' string is less than \'%s\'\n", compare1, compare2);
++      } else if (result == 0) {
++        printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2);
++      } else {
++        printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2);
++      }
++    }
++  } while (strcmp(compare1, "q") != 0);
++
++  printf("*** End of Comparing Strings Demo ***\n\n");
+ }
+diff --git a/module_git_log.txt b/module_git_log.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/tempCodeRunnerFile.c b/tempCodeRunnerFile.c
+new file mode 100644
+index 0000000..6384a47
+--- /dev/null
++++ b/tempCodeRunnerFile.c
+@@ -0,0 +1,9 @@
++/* Version 2 */
++    // prints a message indicating the start of the program.
++    printf("*** Start of Converting Strings to double Demo ***\n");
++
++    // The following line defines the size of the buffer.
++    char doubleString[BUFFER_SIZE];
++    double doubleNumber;//variable
++
++    The following code will loop until the user types "q".
+\ No newline at end of file
+diff --git a/testcases-tokenizing.txt b/testcases-tokenizing.txt
+new file mode 100644
+index 0000000..0be9878
+--- /dev/null
++++ b/testcases-tokenizing.txt
+@@ -0,0 +1,289 @@
++Version 2 
++
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++
++*** Start of Tokenizing Phrases Demo ***
++Type a few phrases separated by comma(q - to quit):
++hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,hellofromversion2,
++Phrase #1 is 'hellofromversion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromv'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'rsion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Phrase #18 is 'hel'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'ofromversion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversi'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'n2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Phrase #18 is 'hellofr'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'mversion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'ellofromversion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromve'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'sion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Phrase #18 is 'hell'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'fromversion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversio'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is '2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Phrase #18 is 'hellofro'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'version2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Phrase #18 is 'h'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'llofromversion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromver'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'ion2'
++Phrase #2 is 'hellofromversion2'
++Phrase #3 is 'hellofromversion2'
++Phrase #4 is 'hellofromversion2'
++Phrase #5 is 'hellofromversion2'
++Phrase #6 is 'hellofromversion2'
++Phrase #7 is 'hellofromversion2'
++Phrase #8 is 'hellofromversion2'
++Phrase #9 is 'hellofromversion2'
++Phrase #10 is 'hellofromversion2'
++Phrase #11 is 'hellofromversion2'
++Phrase #12 is 'hellofromversion2'
++Phrase #13 is 'hellofromversion2'
++Phrase #14 is 'hellofromversion2'
++Phrase #15 is 'hellofromversion2'
++Phrase #16 is 'hellofromversion2'
++Phrase #17 is 'hellofromversion2'
++Phrase #18 is 'hello'
++Type a few phrases separated by comma(q - to quit):
++Phrase #1 is 'romversion2'
++
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++
++Type a few phrases separated by comma(q - to quit):
++q
++*** End of Tokenizing Phrases Demo ***
++
++
++
++...Program finished with exit code 0
++
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++
++*** Start of Tokenizing Phrases Demo ***
++Type a few phrases separated by comma(q - to quit):
++
++Type a few phrases separated by comma(q - to quit):
++
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++
++Type a few phrases separated by comma(q - to quit):
++hellofromversion2
++Phrase #1 is 'hellofromversion2'
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++
++Type a few phrases separated by comma(q - to quit):
++hello,from,version two
++Phrase #1 is 'hello'
++Phrase #2 is 'from'
++Phrase #3 is 'version two'
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++
++*** Start of Tokenizing Phrases Demo ***
++Type a few phrases separated by comma(q - to quit):
++does,,this,,still,,work?
++Phrase #1 is 'does'
++Phrase #2 is 'this'
++Phrase #3 is 'still'
++Phrase #4 is 'work?'
++
++
++
+diff --git a/tokenizing.c b/tokenizing.c
+index 186bbaf..b233a19 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -4,6 +4,7 @@
+ 
+ void tokenizing()
+ {
++
+ 	/* Version 1 */
+ 	printf("***Start of Tokenizing Words Demo ***\n");
+ 	char words[BUFFER_SIZE];
+@@ -16,7 +17,7 @@ void tokenizing()
+ 		fgets(words, BUFFER_SIZE, stdin);
+ 		words[strlen(words) - 1] = '\0';
+ 		if (strcmp(words, "q") != 0)
+-		{	
++		{
+ 			nextWord = strtok(words, " ");
+ 			wordsCounter = 1;
+ 			while (nextWord)
+@@ -28,19 +29,25 @@ void tokenizing()
+ 	} while (strcmp(words, "q") != 0);
+ 	printf("*** End of Tokenizing Words Demo ***\n\n");
+ 
+-
+ 	/* Version 2 */
+-	//>> insert here
+-
+-
+-	/* Version 3 */
+-	//>> insert here
+-
+-
++	printf("*** Start of Tokenizing Phrases Demo ***\n");
++	char phrases[BUFFER_SIZE];
++	char* nextPhrase = NULL;
++	int phrasesCounter;
++	do {
++		printf("Type a few phrases separated by comma(q - to quit):\n");
++		fgets(phrases, BUFFER_SIZE, stdin);
++		phrases[strlen(phrases) - 1] = '\0';
++		if ((strcmp(phrases, "q") != 0)) {
++			nextPhrase = strtok(phrases, ",");
++			phrasesCounter = 1;
++			while (nextPhrase) {
++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
++				nextPhrase = strtok(NULL, ",");
++			}
++		}
++	} while (strcmp(phrases, "q") != 0);
++	printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+ 
+ 
+-int main()
+-{
+-	tokenizing();
+-}
+\ No newline at end of file
+
+commit 41a28a2d91dcf796baa5245c1fef977353d01c6f
+Author: Jay Vakil <jayvakil2@gmail.com>
+Date:   Tue Apr 18 16:02:49 2023 -0400
+
+    VERSION1
+
+diff --git a/.DS_Store b/.DS_Store
+new file mode 100644
+index 0000000..9c9ffdb
+Binary files /dev/null and b/.DS_Store differ
+diff --git a/Final-Project-Plan.xlsx b/Final-Project-Plan.xlsx
+new file mode 100644
+index 0000000..e10b698
+Binary files /dev/null and b/Final-Project-Plan.xlsx differ
+diff --git a/Final-Project-Test-Cases.xlsx b/Final-Project-Test-Cases.xlsx
+new file mode 100644
+index 0000000..e24b9f5
+Binary files /dev/null and b/Final-Project-Test-Cases.xlsx differ
+diff --git a/conversion-testing.txt b/conversion-testing.txt
+new file mode 100644
+index 0000000..a421b64
+--- /dev/null
++++ b/conversion-testing.txt
+@@ -0,0 +1,37 @@
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++*** Start of Converting Strings to int Demo ***
++Type an int numeric string (g - to quit):
++123
++Converted number is 123
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++Type an int numeric string (g - to quit):
++-456
++Converted number is -456
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++Type an int numeric string (g - to quit):
++0
++Converted number is 0
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++Type an int numeric string (g - to quit):
++abc
++Converted number is 0
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++Type an int numeric string (g - to quit):
++1.5
++Converted number is 1
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++Type an int numeric string (g - to quit):
++2147483648
++Converted number is -2147483648
+diff --git a/converting.c b/converting.c
+new file mode 100644
+index 0000000..cad7ce4
+--- /dev/null
++++ b/converting.c
+@@ -0,0 +1,37 @@
++// include the header file
++#include "converting.h"
++
++// define a compiler flag to disable warnings related to certain functions
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 80  // define a constant value for the maximum size of a string buffer
++
++void converting(void)  // define the main function for this module
++{
++    // v1 - Demonstrate conversion of strings to integers using atoi()
++
++    printf("*** Start of Converting Strings to int Demo ***\n");
++
++    char intString[BUFFER_SIZE];  // define a character array to hold the string input from the user
++    int intNumber;  // define an integer variable to hold the converted numeric value
++
++    do {
++        printf("Type an int numeric string (g - to quit):\n");
++         // read a string from standard input and store it in the buffer
++        fgets(intString, BUFFER_SIZE, stdin); 
++        intString[strlen(intString) - 1] = '\0';  // remove the newline character at the end of the string
++        // convert the string to an integer using the atoi() function
++        if (strcmp(intString, "q") != 0) 
++        { 
++            intNumber = atoi(intString);  
++            printf("Converted number is %d\n", intNumber);
++        }
++    } while (strcmp(intString, "q") != 0);  // continue looping until the user inputs "q"
++
++    printf("*** End of Converting Strings to int Demo ***\n\n");
++
++    /* Version 2 */
++    // (No code is provided for Version 2)
++
++    /* Version 3 */
++    // (No code is provided for Version 3)
++}   
+\ No newline at end of file
+diff --git a/converting.h b/converting.h
+new file mode 100644
+index 0000000..0513321
+--- /dev/null
++++ b/converting.h
+@@ -0,0 +1,8 @@
++// CONVERTING MODULE HEADER
++#ifndef _CONVERTING_H_
++#define _CONVERTING_H_
++#include <stdio.h>
++#include <string.h> 
++#include <stdlib.h> 
++void converting (void);
++#endif
+diff --git a/fundamentals - testing.txt b/fundamentals - testing.txt
+new file mode 100644
+index 0000000..6af0292
+--- /dev/null
++++ b/fundamentals - testing.txt	
+@@ -0,0 +1,74 @@
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++
++*** Start of Indexing strings Demo ***
++Type not empty string (q - to quit) :
++q
++*** End of Indexing strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++
++*** Start of Indexing strings Demo ***
++Type not empty string (q - to quit) :
++Hello
++Type the character position within the string :
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++
++*** Start of Indexing strings Demo ***
++Type not empty string (q - to quit) :
++Hello
++Type the character position within the string :
++3
++The character found at 3 position is 'l'
++Type not empty string (q - to quit) :
++q
++*** End of Indexing strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++
++*** Start of Indexing strings Demo ***
++Type not empty string (q - to quit) :
++Hello User
++Type the character position within the string :
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++
++*** Start of Indexing strings Demo ***
++Type not empty string (q - to quit) :
++Hello
++Type the character position within the string :
++8
++Too big... Position reduced to max. available
++The character found at 4 position is 'o'
++Type not empty string (q - to quit) :
++q
++*** End of Indexing strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++
++*** Start of Indexing strings Demo ***
++Type not empty string (q - to quit) :
++
++Type the character position within the string :
++0
++Too big... Position reduced to max. available
++The character found at -1 position is ''
++Type not empty string (q - to quit) :
++q
++*** End of Indexing strinas Demo ***
++
++
++
++
+diff --git a/fundamentals.c b/fundamentals.c
+new file mode 100644
+index 0000000..d198923
+--- /dev/null
++++ b/fundamentals.c
+@@ -0,0 +1,62 @@
++// FUNDAMENTALS MODULE SOURCE
++#define _CRT_SECURE_NO_WARNINGS
++// Declare Macros
++#define BUFFER_SIZE		80
++#define NUM_INPUT_SIZE  10
++// Include the header file
++#include "fundamentals.h"
++
++
++void fundamentals(void)
++{
++	/* Version 1 */
++	
++	// Display a message to indicate the start of the demo
++	printf("*** Start of Indexing Strings Demo ***\n");
++
++	// Declare Variables
++	char buffer1[BUFFER_SIZE];
++	char numInput[NUM_INPUT_SIZE];
++	size_t position;
++
++	// Using a do-while loop to prompt the user to input a string and a position until they enter "q" to quit
++	do {
++		// Prompt the user to input a non-empty string
++		printf("Type not empty string (q - to quit) : \n");
++		fgets(buffer1, BUFFER_SIZE, stdin);
++		// Remove the newline character at the end of the string
++		buffer1[strlen(buffer1) - 1] = '\0';
++		// Check if the user entered "q" to quit
++		if (strcmp(buffer1, "q") != 0)
++		{
++			// Prompt the user to input a position within the string
++			printf("Type the character position within the string: \n");
++			fgets(numInput, NUM_INPUT_SIZE, stdin);
++			// Remove the newline character at the end of the string
++			numInput[strlen(numInput) - 1] = '\0';
++			// Convert the position input to an integer
++			position = atoi(numInput);
++
++			// Check if the position input is valid
++			if (position >= strlen(buffer1)) 
++			{
++				position = strlen(buffer1) - 1;
++				printf("Too big... Position reduced to max. availbale\n");
++			}
++			// Print the character found at the specified position within the string
++			printf("The character found at %d position is \'%c\'\n",
++			(int)position, buffer1[position]);
++		}	
++	}while (strcmp(buffer1, "q") != 0);
++	// Display a message to indicate the end of the demo
++	printf("*** End of Indexing Strings Demo ***\n\n");
++}
++
++/* Version 2 */
++
++
++
++/* Version 3 */
++
++
++
+diff --git a/fundamentals.h b/fundamentals.h
+new file mode 100644
+index 0000000..e00d53c
+--- /dev/null
++++ b/fundamentals.h
+@@ -0,0 +1,8 @@
++// FUNDAMENTALS MODULE HEADER
++#ifndef _FUNDAMENTALS_H_
++#define _FUNDAMENTALS_H_
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++void fundamentals(void);
++#endif
+\ No newline at end of file
+diff --git a/main-testing.txt b/main-testing.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/main.c b/main.c
+new file mode 100644
+index 0000000..85faf93
+--- /dev/null
++++ b/main.c
+@@ -0,0 +1,36 @@
++#define _CRT_SECURE_NO_WARNINGS
++#include "fundamentals.h"
++#include "manipulating.h"
++#include "converting.h"
++#include "tokenizing.h"
++
++// This program allows the user to choose which module to run.
++int main(void)
++{
++    char buff[10];
++    do
++    {
++        // The program provides a menu of options for the user to choose from.
++        printf("1 - Fundamentals\n");
++        printf("2 - Manipulation\n");
++        printf("3 - Converting\n");
++        printf("4 - Tokenizing\n");
++        printf("0 - Exit\n");
++        printf("Which module to run? \n");
++        // The user enters a number corresponding to the module they want to run.
++        fgets(buff, 10, stdin);
++        // The program then executes the selected module.
++        switch (buff[0])
++        {
++        case '1': fundamentals();
++            //break;
++        case '2': manipulating();
++            //break;
++        case '3': converting();
++            break;
++        case '4': tokenizing();
++            //break;
++        }
++    } while (buff[0] != '0'); // The program continues to prompt the user for module selection until they choose to exit.
++    return 0;
++}
+\ No newline at end of file
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+new file mode 100644
+index 0000000..663a1d4
+--- /dev/null
++++ b/manipulating-testing.txt
+@@ -0,0 +1,240 @@
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++Bar
++Concatenated string is 'FooBar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++Foo
++Concatenated string is 'FooFoo'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++B
++Concatenated string is 'FooB'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++B
++Type the 2nd string:
++Bar
++Concatenated string is 'BBar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++123
++Concatenated string is 'Foo123'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-7  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++123
++Type the 2nd string:
++Bar
++Concatenated string is '123Bar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-8  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++#
++Concatenated string is 'Foo#'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-9  - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++#
++Type the 2nd string:
++Bar
++Concatenated string is '#Bar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-10 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++
++Concatenated string is 'Foo'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++   
++============================================
++- - - - - - - - -  Test-11 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++
++Type the 2nd string:
++Bar
++Concatenated string is 'Bar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-12 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++FOO
++Type the 2nd string:
++Bar
++Concatenated string is 'FOOBar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-13 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++\n
++Concatenated string is 'Foo\n'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-14 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++\n
++Type the 2nd string:
++Bar
++Concatenated string is '\nBar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-15 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++BAR
++Concatenated string is 'FooBAR'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-16 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++
++Concatenated string is 'Foo '
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-17 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++
++Type the 2nd string:
++Bar
++Concatenated string is ' Bar'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++============================================
++- - - - - - - - -  Test-18 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
++Type the 2nd string:
++zsh: trace trap  ./manipulating
++
++============================================
++- - - - - - - - -  Test-19 - - - - - - - - -
++============================================
++*** Start of Concatenating strings Demo ***
++Type the 1st string (q - to quit):
++Foo
++Type the 2nd string:
++q
++Concatenated string is 'Fooq'
++Type the 1st string (q - to quit):
++q
++*** End of Concatenatinag strinas Demo ***
++
++
++
+diff --git a/manipulating.c b/manipulating.c
+new file mode 100644
+index 0000000..f827db9
+--- /dev/null
++++ b/manipulating.c
+@@ -0,0 +1,34 @@
++#define BUFFER_SIZE 10
++// MANIPULATING HEADER
++#include "manipulating.h"
++
++/**
++ * Concatenates two strings taken from the standard input
++ */
++void manipulating(void) 
++{
++    printf("*** Start of Concatenating strings Demo ***\n");
++
++    char string1[BUFFER_SIZE];
++    char string2[BUFFER_SIZE];
++
++    do {
++        printf("Type the 1st string (q - to quit): \n");
++        fgets(string1, BUFFER_SIZE, stdin); // Store characters from stdin in string1
++
++        string1[strlen(string1) - 1] = '\0'; // Append the null character
++
++        if((strcmp(string1, "q") != 0)) 
++        {
++            printf("Type the 2nd string: \n");
++            fgets(string2, BUFFER_SIZE, stdin); // Store characters from stdin in string2
++
++            string2[strlen(string2) - 1] = '\0'; // Append the null character
++
++            strcat(string1, string2); // Join string1, string2 and store in string1
++            printf("Concatenated string is \'%s\'\n", string1);
++        }
++    } while (strcmp(string1, "q") != 0); 
++
++    printf("*** End of Concatenatinag strinas Demo ***\n\n");
++}
+diff --git a/manipulating.h b/manipulating.h
+new file mode 100644
+index 0000000..c318635
+--- /dev/null
++++ b/manipulating.h
+@@ -0,0 +1,7 @@
++// MANIPULATING MODULE HEADER
++#ifndef _MANIPULATING_H_
++#define _MANIPULATING_H_
++#include <stdio.h>
++#include <string.h>
++void manipulating(void);
++#endif
+diff --git a/tokenizing-testing.txt b/tokenizing-testing.txt
+new file mode 100644
+index 0000000..bc9a548
+--- /dev/null
++++ b/tokenizing-testing.txt
+@@ -0,0 +1,243 @@
++============================================
++- - - - - - - - -  Test-1  - - - - - - - - -
++============================================
++***Start of Tokenizing Words Demo ***
++Type a few words seperated by space (q - to quit):
++hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello 
++Word #1 is 'hello'
++Word #2 is 'hello'
++Word #3 is 'hello'
++Word #4 is 'hello'
++Word #5 is 'hello'
++Word #6 is 'hello'
++Word #7 is 'hello'
++Word #8 is 'hello'
++Word #9 is 'hello'
++Word #10 is 'hello'
++Word #11 is 'hello'
++Word #12 is 'hello'
++Word #13 is 'hello'
++Word #14 is 'hello'
++Word #15 is 'hello'
++Word #16 is 'hello'
++Word #17 is 'hello'
++Word #18 is 'hello'
++Word #19 is 'hello'
++Word #20 is 'hello'
++Word #21 is 'hello'
++Word #22 is 'hello'
++Word #23 is 'hello'
++Word #24 is 'hello'
++Word #25 is 'hello'
++Word #26 is 'hello'
++Word #27 is 'hello'
++Word #28 is 'hello'
++Word #29 is 'hello'
++Word #30 is 'hello'
++Word #31 is 'hello'
++Word #32 is 'hello'
++Word #33 is 'hello'
++Word #34 is 'hello'
++Word #35 is 'hello'
++Word #36 is 'hello'
++Word #37 is 'hello'
++Word #38 is 'hello'
++Word #39 is 'hello'
++Word #40 is 'hello'
++Word #41 is 'hello'
++Word #42 is 'hello'
++Word #43 is 'hello'
++Word #44 is 'hello'
++Word #45 is 'hello'
++Word #46 is 'hello'
++Word #47 is 'hello'
++Word #48 is 'hello'
++Word #49 is 'hello'
++Word #50 is 'hell'
++Type a few words seperated by space (q - to quit):
++Word #1 is 'hello'
++Word #2 is 'hello'
++Word #3 is 'hello'
++Word #4 is 'hello'
++Word #5 is 'hello'
++Word #6 is 'hello'
++Word #7 is 'hello'
++Word #8 is 'hello'
++Word #9 is 'hello'
++Word #10 is 'hello'
++Word #11 is 'hello'
++Word #12 is 'hello'
++Word #13 is 'hello'
++Word #14 is 'hello'
++Word #15 is 'hello'
++Word #16 is 'hello'
++Word #17 is 'hello'
++Word #18 is 'hello'
++Word #19 is 'hello'
++Word #20 is 'hello'
++Word #21 is 'hello'
++Word #22 is 'hello'
++Word #23 is 'hello'
++Word #24 is 'hello'
++Word #25 is 'hello'
++Word #26 is 'hello'
++Word #27 is 'hello'
++Word #28 is 'hello'
++Word #29 is 'hello'
++Word #30 is 'hello'
++Word #31 is 'hello'
++Word #32 is 'hello'
++Word #33 is 'hello'
++Word #34 is 'hello'
++Word #35 is 'hello'
++Word #36 is 'hello'
++Word #37 is 'hello'
++Word #38 is 'hello'
++Word #39 is 'hello'
++Word #40 is 'hello'
++Word #41 is 'hello'
++Word #42 is 'hello'
++Word #43 is 'hello'
++Word #44 is 'hello'
++Word #45 is 'hello'
++Word #46 is 'hello'
++Word #47 is 'hello'
++Word #48 is 'hello'
++Word #49 is 'hello'
++Word #50 is 'hel'
++Type a few words seperated by space (q - to quit):
++Word #1 is 'o'
++Word #2 is 'hello'
++Word #3 is 'hello'
++Word #4 is 'hello'
++Word #5 is 'hello'
++Word #6 is 'hello'
++Word #7 is 'hello'
++Word #8 is 'hello'
++Word #9 is 'hello'
++Word #10 is 'hello'
++Word #11 is 'hello'
++Word #12 is 'hello'
++Word #13 is 'hello'
++Word #14 is 'hello'
++Word #15 is 'hello'
++Word #16 is 'hello'
++Word #17 is 'hello'
++Word #18 is 'hello'
++Word #19 is 'hello'
++Word #20 is 'hello'
++Word #21 is 'hello'
++Word #22 is 'hello'
++Word #23 is 'hello'
++Word #24 is 'hello'
++Word #25 is 'hello'
++Word #26 is 'hello'
++Word #27 is 'hello'
++Word #28 is 'hello'
++Word #29 is 'hello'
++Word #30 is 'hello'
++Word #31 is 'hello'
++Word #32 is 'hello'
++Word #33 is 'hello'
++Word #34 is 'hello'
++Word #35 is 'hello'
++Word #36 is 'hello'
++Word #37 is 'hello'
++Word #38 is 'hello'
++Word #39 is 'hello'
++Word #40 is 'hello'
++Word #41 is 'hello'
++Word #42 is 'hello'
++Word #43 is 'hello'
++Word #44 is 'hello'
++Word #45 is 'hello'
++Word #46 is 'hello'
++Word #47 is 'hello'
++Word #48 is 'hello'
++Word #49 is 'hello'
++Word #50 is 'hello'
++Word #51 is 'he'
++Type a few words seperated by space (q - to quit):
++Word #1 is 'lo'
++Word #2 is 'hello'
++Word #3 is 'hello'
++Word #4 is 'hello'
++Word #5 is 'hello'
++Word #6 is 'hello'
++Word #7 is 'hello'
++Word #8 is 'hello'
++Word #9 is 'hello'
++Word #10 is 'hello'
++Word #11 is 'hello'
++Word #12 is 'hello'
++Word #13 is 'hello'
++Word #14 is 'hello'
++Word #15 is 'hello'
++Word #16 is 'hello'
++Word #17 is 'hello'
++Word #18 is 'hello'
++Word #19 is 'hello'
++Word #20 is 'hello'
++Word #21 is 'hello'
++Word #22 is 'hello'
++Word #23 is 'hello'
++Word #24 is 'hello'
++Word #25 is 'hello'
++Word #26 is 'hello'
++Word #27 is 'hello'
++Word #28 is 'hello'
++Word #29 is 'hello'
++Word #30 is 'hello'
++Word #31 is 'hello'
++Word #32 is 'hello'
++Word #33 is 'hello'
++Word #34 is 'hello'
++Word #35 is 'hello'
++Word #36 is 'hello'
++Word #37 is 'hello'
++Type a few words seperated by space (q - to quit):
++
++
++============================================
++- - - - - - - - -  Test-2  - - - - - - - - -
++============================================
++
++Type a few words seperated by space (q - to quit):
++q
++*** End of Tokenizing Words Demo ***
++
++
++============================================
++- - - - - - - - -  Test-3  - - - - - - - - -
++============================================
++***Start of Tokenizing Words Demo ***
++Type a few words seperated by space (q - to quit):
++
++Type a few words seperated by space (q - to quit):
++
++============================================
++- - - - - - - - -  Test-4  - - - - - - - - -
++============================================
++Type a few words seperated by space (q - to quit):
++hello
++Word #1 is 'hello'
++Type a few words seperated by space (q - to quit):
++
++============================================
++- - - - - - - - -  Test-5  - - - - - - - - -
++============================================
++Type a few words seperated by space (q - to quit):
++hello world
++Word #1 is 'hello'
++Word #2 is 'world'
++Type a few words seperated by space (q - to quit):
++
++============================================
++- - - - - - - - -  Test-6  - - - - - - - - -
++============================================
++
++***Start of Tokenizing Words Demo ***
++Type a few words seperated by space (q - to quit):
++        hello
++Word #1 is '    hello'
++Type a few words seperated by space (q - to quit):
+\ No newline at end of file
+diff --git a/tokenizing.c b/tokenizing.c
+new file mode 100644
+index 0000000..186bbaf
+--- /dev/null
++++ b/tokenizing.c
+@@ -0,0 +1,46 @@
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 300
++#include "tokenizing.h"
++
++void tokenizing()
++{
++	/* Version 1 */
++	printf("***Start of Tokenizing Words Demo ***\n");
++	char words[BUFFER_SIZE];
++	char* nextWord = NULL;
++	int wordsCounter;
++
++	do
++	{
++		printf("Type a few words seperated by space (q - to quit):\n");
++		fgets(words, BUFFER_SIZE, stdin);
++		words[strlen(words) - 1] = '\0';
++		if (strcmp(words, "q") != 0)
++		{	
++			nextWord = strtok(words, " ");
++			wordsCounter = 1;
++			while (nextWord)
++			{
++				printf("Word #%d is \'%s\'n", wordsCounter++, nextWord);
++				nextWord = strtok(NULL, " ");
++			}
++		}
++	} while (strcmp(words, "q") != 0);
++	printf("*** End of Tokenizing Words Demo ***\n\n");
++
++
++	/* Version 2 */
++	//>> insert here
++
++
++	/* Version 3 */
++	//>> insert here
++
++
++}
++
++
++int main()
++{
++	tokenizing();
++}
+\ No newline at end of file
+diff --git a/tokenizing.h b/tokenizing.h
+new file mode 100644
+index 0000000..6245f6c
+--- /dev/null
++++ b/tokenizing.h
+@@ -0,0 +1,6 @@
++#ifndef _TOKENIZING_H_
++#define _TOKENIZING_H_
++#include <stdio.h>
++#include <string.h>
++void tokenizing(void);
++#endif
+\ No newline at end of file
