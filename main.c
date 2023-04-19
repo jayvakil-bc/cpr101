@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
-//#include "fundamentals.h"
-//#include "manipulating.h"
+#include "fundamentals.h"
+#include "manipulating.h"
 #include "converting.h"
-//#include "tokenizing.h"
+#include "tokenizing.h"
 
 // This program allows the user to choose which module to run.
 int main (void)
@@ -22,13 +22,13 @@ int main (void)
         // The program then executes the selected module.
         switch (buff[0])
         {
-        //case '1': fundamentals () ;
+        case '1': fundamentals () ;
             //break;
-        //case '2': manipulating () ;
+        case '2': manipulating () ;
             //break;
         case '3': converting ();
             break;
-        //case '4': tokenizing () ;
+        case '4': tokenizing () ;
             //break;
         }
     } while (buff[0] != '0'); // The program continues to prompt the user for module selection until they choose to exit.
